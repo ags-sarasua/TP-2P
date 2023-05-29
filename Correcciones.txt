@@ -23,3 +23,32 @@ de otra manera ya que siempre se debe pasar la lista completa de empleados/clien
 
 Hacer la persistencia de los datos de clientes/empleados en un archivo porque al visualizar
 solo la lista, cuando el sistema se vuelve a correr no hay persistencia de datos; se empieza desde 0
+
+2) Hagan la clase usuario y que se maneje desde ahi el registro de los ususarios: 
+crear borrar, editar, consultar, cambiar contraseña, etc
+3) Deberían hacer que las clases que manejan los objetos de otras clases, los tengan adentro. 
+por ejemplo: que las personas guarden una (o mas) reservas dentro de su clase. 
+Entonces de esta forma les es mas facil agregar modificar o eliminar reservas (algo asi sería el llamado: persona.eliminarReserva(Reserva)).
+4) La lista_persona con la que se manejan seria mas ordenado si fuese una clase que tenga una Lista de personas 
+para manejar personas y tener metodos para agregar modificar consultar o eliminar tambien (no una Lista()). 
+Lo mismo con los empleados. podrian hacer una clase que sea "administraPersonas" o "administraEmpleados".
+
+cosas para la parte 2:
+1) "hacer persistir la informacion del negocio", quizas guardar las estadisticas en un archivo .txt 
+parecido a lo que hacen con el usuario es la forma más facil, 
+asi pensandolo rapido se me ocurre una opcion en el menu que sea "guardar datos" y ahi guardan en el archivo
+2) (diccionarios y conjuntos, pilas, colas, tuplas) tienen que pensar donde podrían usar estan estructuras, 
+donde sería adecuado. Habiamos hablado que el diccionario era util para usuario contraseña por ejemplo. 
+(les recuerdo lo que habiamos hablado de nuevo, estaria bueno que tengan una clase administradorUsuarios
+que tenga instancias de usuarios (otra clase) adentro con un dictionary). 
+Para pilas colas y tuplas no deberían tener mucho problema ;)
+3) Errores y FrontEnd: El trabajo no tiene una separación clara entre front end y back end... 
+estaría bueno si pueden separarlo mejor. además van a tener que manejar errores 
+para lo que les va a ser mas comodo. esto se maneja de esta forma: el back devuelve un codigo de error 
+y el front end recibe ese codigo e imprime el error.
+4) Para esta semana quizas no, pero vayan pensando donde hacen 
+"Uso de las estructuras listas secuenciales, listas enlazadas simples, vectores, matrices, listas,
+ colas, tuplas, diccionarios, funciones recursivas, excepciones."
+5) Podrían agregar funcionalidades identificando quién es el usuario que ingresó. 
+Ej: si se registra un empleado a la aplicacion-> que pueda crear un vuelo, 
+si se registra un usuario que no es empleado -> que no pueda
