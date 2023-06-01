@@ -1,10 +1,11 @@
+import json
 
 class Nodo():
     def __init__(self,dato=None,prox=None):
         self.dato=dato
         self.prox=prox
     def __str__(self) -> str:
-        return str(self.dato) # Especificas como queres que se printee
+        return self.dato.__str__() # Especificas como queres que se printee
     
 class Lista():
     def __init__(self):
@@ -67,4 +68,17 @@ class Lista():
         
         return False
 
+    def guardar_lista(self, nombre_archivo):
+        with open(nombre_archivo, "w") as archivo:
+            self.guardar_lista_recursivo(self.head, archivo)
     
+    def guardar_lista_recursivo(self, nodo, archivo):
+        if nodo is None:
+            return
+        
+        #Guardar la información del nodo en el archivo
+        json.dump(nodo.dato.__dict__,archivo)
+
+        #Llamada recursiva a los nodos proximos
+        self.guardar_lista_recursivo(nodo.prox, archivo)
+        return
