@@ -52,3 +52,17 @@ y el front end recibe ese codigo e imprime el error.
 5) Podrían agregar funcionalidades identificando quién es el usuario que ingresó. 
 Ej: si se registra un empleado a la aplicacion-> que pueda crear un vuelo, 
 si se registra un usuario que no es empleado -> que no pueda
+
+
+
+
+
+
+
+
+
+
+
+
+
+

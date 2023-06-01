@@ -46,14 +46,22 @@ class Lista():
             nodo=nodo.prox
         return False
     
-    def buscar(self,input_principal, atributo_principal,atributo_a_buscar):
+    def buscar_inst(self,input_principal, atributo_principal):
         nodo=Nodo()
         nodo=self.head
         for i in range(self.len):
             if getattr(nodo.dato,atributo_principal)==input_principal:
-                return getattr(nodo.dato,atributo_a_buscar)
+                return nodo.dato
             nodo=nodo.prox
         return False
+
+    def buscar_attr(self,input_principal, atributo_principal,atributo_a_buscar):
+        dato = self.buscar_inst(input_principal, atributo_principal)
+        if dato:
+            return getattr(dato,atributo_a_buscar)
+        return False
+        
+
 
     def actualizar_le(self,input_principal, atributo_principal,atributo_a_buscar,nuevo_input):
         nodo=Nodo()

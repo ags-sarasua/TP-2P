@@ -1,4 +1,5 @@
 import datetime
+from listasenlazadas import *
 
 
 #validarNum valida que un número ingresado por el usuario sea un número entre cierto rango pedido
@@ -85,7 +86,12 @@ class persona:
         self.pais=pais
         self.mail=mail
         self.telefono=telefono
-        
+    
+    def __eq__(self, other):
+        return self.DNI == other.DNI
+
+    def __str__(self):
+        return f"DNI: {self.DNI}, Nombre: {self.nombre}, Apellido: {self.apellido}, Sexo: {self.sexo}, Fecha de nacimiento: {self.fecha_de_nacimiento}, pais: {self.pais}, Pais: {self.pais}, Teléfono: {self.telefono}"
     #chequear DNI: que sea un número de 8 digitos
     @staticmethod
     def check_DNI(DNI):
@@ -133,7 +139,7 @@ class persona:
     
     @staticmethod    
     def check_existencia_DNI(DNI,lista_persona):        
-        while lista_persona.buscar(DNI,"DNI","DNI"):
+        while lista_persona.buscar_attr(DNI,"DNI","DNI"):
             DNI=input('Existe un usuario con su DNI, ingrese uno nuevo:   ')
             DNI=persona.check_DNI(DNI)
             DNI=persona.check_existencia_DNI(DNI,lista_persona)
@@ -149,7 +155,7 @@ class persona:
     
     @staticmethod    
     def check_existencia_mail(mail,lista_persona):        
-        while lista_persona.buscar(mail,"mail","mail"):
+        while lista_persona.buscar_attr(mail,"mail","mail"):
             mail=input('Existe un usuario con su mail, ingrese uno nuevo:   ')
             mail=persona.check_sintaxis_mail(mail)
             mail=persona.check_existencia_mail(mail,lista_persona)
@@ -166,7 +172,7 @@ class persona:
 
     @staticmethod    
     def check_existencia_telefono(telefono,lista_persona):        
-        while lista_persona.buscar(telefono,"telefono","telefono"):
+        while lista_persona.buscar_attr(telefono,"telefono","telefono"):
             telefono=input('Existe un usuario con su telefono, ingrese uno nuevo:   ')
             telefono=persona.check_sintaxis_telefono(telefono)
             telefono=persona.check_existencia_telefono(telefono,lista_persona)
@@ -313,6 +319,9 @@ class vuelo:
         self.legajo_piloto=legajo_piloto
         self.precio=precio
 
+
+    def __str__(self):
+        return f"Nro de vuelo: {self.nro_vuelo}, Aeropuerto orígen: {self.aeropuerto_salida}, Aeropuerto destino: {self.aeropuerto_llegada}, Legajo Piloto: {self.legajo_piloto}, Precio: {self.precio}"
     #Verifica que el vuelo sea un número de 4 dígitos
     @staticmethod
     def check_sintaxis_nro_vuelo(nro_vuelo):
@@ -322,7 +331,7 @@ class vuelo:
     
     @staticmethod
     def check_existencia_nro_vuelo(nro_vuelo,lista_vuelo):        
-        while lista_vuelo.buscar(nro_vuelo,"nro_vuelo","nro_vuelo"):
+        while lista_vuelo.buscar_attr(nro_vuelo,"nro_vuelo","nro_vuelo"):
             nro_vuelo=input('Existe un vuelo con ese nro de vuelo , ingrese uno nuevo:   ')
             nro_vuelo=vuelo.check_sintaxis_nro_vuelo(nro_vuelo)
             nro_vuelo=vuelo.check_existencia_nro_vuelo(nro_vuelo,lista_vuelo)
@@ -367,12 +376,24 @@ class viaje:
         self.fecha=fecha
         self.pasajeros=[]
         self.contador_pasajeros = 0
+
+    def str_pasajero(self):
+        ret = "["
+        if len(self.pasajeros) == 0:
+            pass
+        for pasajero in self.pasajeros[:-1]:
+            ret += str(pasajero.DNI) + ", "
+        ret += str(self.pasajeros[-1].DNI)
+        ret += "]"
+        return ret
     
+    def __str__(self):
+        return f"Nro de viaje: {self.nro_viaje}, Nro de vuelo: {self.nro_vuelo}, Nro de serie del avión: {self.nro_serie}, Fecha: {self.fecha}, Pasajeros: " + self.str_pasajero()
     def agregar_pasajero(nro_viaje, pasajero, lista_viaje):
         nodo_actual = lista_viaje.head
         while nodo_actual is not None:
             if nodo_actual.dato.nro_viaje == nro_viaje:
-                if len(nodo_actual.dato.pasajeros) < 5:
+                if len(nodo_actual.dato.pasajeros) < viaje.capacidad:
                     if pasajero not in nodo_actual.dato.pasajeros:
                         nodo_actual.dato.pasajeros.append(pasajero)
                         nodo_actual.dato.contador_pasajeros += 1
@@ -386,7 +407,7 @@ class viaje:
             nodo_actual = nodo_actual.prox
         print("El número de viaje no fue encontrado.")
         return False
-    def eliminar_pasajero(nro_viaje, pasajero, lista_viaje):
+    def eliminar_pasajero(nro_viaje, pasajero, lista_viaje):  #¡¡¡¡¡¡¡MODIFICAR COMO EL DE ARRIBA!!!!!!!!!
         nodo_actual = lista_viaje.head
         while nodo_actual is not None:
             if nodo_actual.dato.nro_viaje == nro_viaje:
@@ -407,7 +428,7 @@ class viaje:
     @staticmethod
     def check_vuelo(nro_vuelo,lista_vuelo):
         while True:
-            if lista_vuelo.buscar(nro_vuelo,"nro_vuelo","nro_vuelo"):
+            if lista_vuelo.buscar_attr(nro_vuelo,"nro_vuelo","nro_vuelo"):
                 return nro_vuelo
             else:
                 nro_vuelo = input("Error, el vuelo no existe. Intente de nuevo: ")
@@ -440,7 +461,7 @@ class viaje:
         return nro_viaje
     @staticmethod
     def check_existencia_nro_viaje(nro_viaje,lista_viaje):        
-        while lista_viaje.buscar(nro_viaje,"nro_viaje","nro_viaje"):
+        while lista_viaje.buscar_attr(nro_viaje,"nro_viaje","nro_viaje"):
             nro_viaje=input('Existe un viaje con ese nro de viaje , ingrese uno nuevo:   ')
             nro_viaje=viaje.check_sintaxis_nro_viaje(nro_viaje)
             nro_viaje=viaje.check_existencia_nro_viaje(nro_viaje,lista_viaje)
@@ -467,7 +488,7 @@ class reserva:
         return nro_reserva
     @staticmethod
     def check_existencia_nro_reserva(nro_reserva,lista_reserva):        
-        while lista_reserva.buscar(nro_reserva,"nro_reserva","nro_reserva"):
+        while lista_reserva.buscar_attr(nro_reserva,"nro_reserva","nro_reserva"):
             nro_reserva=input('Existe una reserva con ese nro de reserva , ingrese uno nuevo:   ')
             nro_reserva=reserva.check_sintaxis_nro_reserva(nro_reserva)
             nro_reserva=reserva.check_existencia_nro_reserva(nro_reserva,lista_reserva)
@@ -478,7 +499,7 @@ class reserva:
     @staticmethod
     def check_cliente(DNI_pasajero,lista_pasajero):
         while(True):
-            if lista_pasajero.buscar(DNI_pasajero,"DNI","DNI"):
+            if lista_pasajero.buscar_attr(DNI_pasajero,"DNI","DNI"):
                 return DNI_pasajero
             else: 
                 DNI_pasajero=input('Error, el DNI tiene que ser de un pasajero existente. Ingrese nuevamente:    ')
@@ -496,7 +517,7 @@ class reserva:
     @staticmethod
     def check_viaje(nro_viaje,lista_viaje):
         while(True):
-            if lista_viaje.buscar(nro_viaje,"nro_viaje","nro_viaje"):
+            if lista_viaje.buscar_attr(nro_viaje,"nro_viaje","nro_viaje"):
                 return nro_viaje
             else: 
                 nro_viaje=input('Error, el viaje ingresado no corresponde con uno existente. Ingrese nuevamente:    ') 
@@ -504,9 +525,9 @@ class reserva:
     #Chequea que el monto ingresado en la reserva sea el correspondiente
     @staticmethod
     def check_monto(precio,nro_viaje,lista_viaje,lista_vuelo):
-        nro_vuelo=lista_viaje.buscar(nro_viaje,"nro_viaje","nro_vuelo")
+        nro_vuelo=lista_viaje.buscar_attr(nro_viaje,"nro_viaje","nro_vuelo")
         while True:
-            if lista_vuelo.buscar(nro_vuelo,"nro_vuelo","precio")==precio:
+            if lista_vuelo.buscar_attr(nro_vuelo,"nro_vuelo","precio")==precio:
                 return precio
             else: 
                 precio=input('Monto incorrecto, ingrese nuevamente su monto:    ')

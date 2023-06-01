@@ -480,8 +480,8 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,
                     lista_filtro[2]=reserva.check_empleado(lista_filtro[2],lista_empleado)
                     lista_filtro[3]=reserva.check_viaje(lista_filtro[3],lista_viaje)
                     lista_filtro[4]=reserva.check_monto(lista_filtro[4],lista_filtro[3],lista_viaje, lista_vuelo)
-                    
-                    if viaje.agregar_pasajero(lista_filtro[3], lista_filtro[1],lista_viaje): 
+                    pasajero=lista_persona.buscar_inst(lista_filtro[1],"DNI")
+                    if viaje.agregar_pasajero(lista_filtro[3], pasajero,lista_viaje): 
                         lista_reserva.append(Nodo(reserva(lista_filtro[0], lista_filtro[1], lista_filtro[2],lista_filtro[3],lista_filtro[4])))
                 if eleccion_metodo=='3':
                     input_principal=input('Ingrese la reserva que desea eliminar: ')
