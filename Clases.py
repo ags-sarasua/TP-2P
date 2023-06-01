@@ -37,19 +37,20 @@ def validarFecha():
 
 #login recibe un usuario y una contraseña para chequear si está en el sistema. 
 def login(username, password):
-    with open("Usuarios.txt", 'r', encoding='utf-8') as archivo:
-        listaUsuarios=[]
-        passwordList=[]
-        for linea in archivo:
-            usu, contra = linea.strip().split(".")
-            listaUsuarios.append(usu)
-            passwordList.append(contra)
-        while username not in listaUsuarios:
-            username = input("El usuario ingresado no existe. Intente de nuevo: ")
-        index = listaUsuarios.index(username)
-        while passwordList[index] != password:
-            password = input("Error, contraseña incorrecta. Ingresela nuevamente: ")
-        return True
+        with open("Usuarios.txt", 'r', encoding='utf-8') as archivo:
+            listaUsuarios=[]
+            passwordList=[]
+            for linea in archivo:
+                usu, contra = linea.strip().split(".")
+                listaUsuarios.append(usu)
+                passwordList.append(contra)
+            while username not in listaUsuarios:
+                username = input("El usuario ingresado no existe. Intente de nuevo: ")
+            index = listaUsuarios.index(username)
+            while passwordList[index] != password:
+                password = input("Error, contraseña incorrecta. Ingresela nuevamente: ")
+            return True
+
 
 #registrarse escribe el archivo que tiene los usuarios y contraseñas para registrar un nuevo usuario
 def registrarse(username):
@@ -61,7 +62,7 @@ def registrarse(username):
     while username in listaUsuarios:
         username = input("Este nombre de usuario ya existe. Ingrese otro: ")
     password = input("Ingrese una contraseña: ")
-    with open("Usuarios.txt", 'a', encoding='utf-8') as archivo:
+    with open("Usuarioss.txt", 'a', encoding='utf-8') as archivo:
         archivo.write(f"\n{username}.{password}")
         return True
     
@@ -454,6 +455,9 @@ class reserva:
         self.empleado=legajo_empleado
         self.nro_viaje=nro_viaje
         self.monto=monto
+
+    def __str__(self):
+        return f"Nro reserva: {self.nro_reserva}, DNI cliente: {self.DNI_cliente}, Legajo empleado: {self.empleado}, Nro viaje: {self.nro_viaje}, Monto: {self.monto}"
 
     #Pide que el nro de reserva sea un numérico de 4 dígitos
     @staticmethod
