@@ -15,7 +15,7 @@ class Lista():
         nodo=self.head
         lista = []
         while nodo is not None:
-            lista.append(str(nodo.dato.__dict__))
+            lista.append(str(nodo.dato))
             nodo = nodo.prox
         return "\n".join(lista)
     
