@@ -177,7 +177,7 @@ lista_reserva.guardar_lista("reserva.json")
 
 
 ######
-
+"""
 def jsonHandler(archivo):
     with open(archivo,'r') as f:
         try:
@@ -186,3 +186,4 @@ def jsonHandler(archivo):
             jsonData=[]
         return jsonData
 dict.values()
+"""

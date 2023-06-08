@@ -6,9 +6,10 @@ import matplotlib.pyplot as mlp
 #----------------
 
 #menu una vez ingresado 
-def menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,lista_reserva):
-    while True:
-        print('1)Persona    2)Empleado    3)Avion    4)Vuelo    5)Viaje      6)Reserva    S)Salir')
+def menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,lista_reserva, us):
+    menu = True
+    while menu == True:
+        print('1)Persona  2)Empleado  3)Avion  4)Vuelo   5)Viaje   6)Reserva  7)Cambiar Contraseña   S)Salir')
         
         eleccion_clase=input('Ingrese su eleccion: ')
 #persona
@@ -519,19 +520,27 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,
                             nuevo_input=Clases.viaje.check_sintaxis_nro_viaje(nuevo_input,lista_viaje)
                             if lista_reserva.actualizar_le(input_principal,"nro_reserva","nro_viaje",nuevo_input) == False:
                                 print("El número de reserva ingresado no corresponde al de un reserva existente. La información no ha sido actualizada con exito.")
-
                         
                     else:
                         print("Ingrese alguna de las opciones numéricas y vuelva a intentarlo")
 
-
-
-
                 if eleccion_metodo=='B' or eleccion_metodo =="b":
                     menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,lista_reserva)
+#Actualizar contraseña
+        if eleccion_clase=='7':
+            verificar = False
+            while verificar == False:
+                newPass1 = input("Ingrese una nueva contraseña: ")
+                newPass2 = input("Ingresela nuevamente: ")
+                if newPass1 == newPass2:
+                    verificar = True
+                else:
+                    print("Error, las contraseñas deben ser iguales. Intente nuevamente.")
+            if actualizar_contra(us, newPass1):
+                print("Su contraseña se ha cambiado con éxito.")
 #salir
         if eleccion_clase=='S' or eleccion_clase =="s":
-            menu()
+            return
 
 #Menu de ingreso
 
@@ -550,7 +559,7 @@ def menu():
         print("                         \    /  ||/   H   \||  \    /")
         print("                          '--'   OO   O|O   OO   '--'")
 
-        numero = input("\n Si se quiere registrar ingrese el número 1 si ya tiene una cuenta ingrese el número 2:   ")
+        numero = input("\nSi se quiere registrar ingrese el número 1 si ya tiene una cuenta ingrese el número 2:   ")
         while numero != "1" and numero != "2": numero = input("Ingrese una opción válida:   ")
         if numero == "1":  
             us = input("Ingrese un usuario: ")
@@ -564,7 +573,9 @@ def menu():
             con = input("Ingrese su contraseña: ")
             try:
                 if login(us, con):
-                    menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,lista_reserva)
+                    print("¡Hola {}!".format(us))
+                    menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,lista_reserva, us)
+                    inicio = False
             except FileNotFoundError:
                 print("No se pudo ejecutar")
                 inicio = False

@@ -1,22 +1,5 @@
--Para actualizar la cantidad de veces que una persona ingresa como invitado no se crea un metodo, 
-sino que lo hacen en el menu principal dentro de esa opcion
-
--No se guarda la informacion de los usuarios en un archivo, los guardan en listas
-
 -Se actualiza correctamente la informacion del usuario, pero no se permite cambiar la contraseña, 
 por lo que el archivo Usuarios.txt solo se usa para registrarse pero no para poder actualizar la contraseña
-
--El agregar un pasajero al viaje es sobre la instancia de viaje, 
-no es necesario pasarle la lista de viajes, ya que el metodo es un metodo de la clase
-
-
-
-lista_avion que es una lista agrega los aviones y eso es lo que se utiliza en todo el TP; 
-en estos casos se deberia tener un metodo para agregar el avion en la clase, 
-por lo que la clase se podria llamar Aviones y tener un metodo de agregar_avion
-y al llamarlo se agrega ese avion a self.lista_aviones
-
-
 
 Las clases Reserva, persona y empleado se relacionan entre si, se podria haber resuelto
 de otra manera ya que siempre se debe pasar la lista completa de empleados/clientes e ir iterando
@@ -24,8 +7,7 @@ de otra manera ya que siempre se debe pasar la lista completa de empleados/clien
 Hacer la persistencia de los datos de clientes/empleados en un archivo porque al visualizar
 solo la lista, cuando el sistema se vuelve a correr no hay persistencia de datos; se empieza desde 0
 
-2) Hagan la clase usuario y que se maneje desde ahi el registro de los ususarios: 
-crear borrar, editar, consultar, cambiar contraseña, etc
+2) Hagan la clase usuario y que se maneje desde ahi el registro de los ususarios: crear borrar, editar, consultar, cambiar contraseña, etc
 3) Deberían hacer que las clases que manejan los objetos de otras clases, los tengan adentro. 
 por ejemplo: que las personas guarden una (o mas) reservas dentro de su clase. 
 Entonces de esta forma les es mas facil agregar modificar o eliminar reservas (algo asi sería el llamado: persona.eliminarReserva(Reserva)).
