@@ -1,6 +1,7 @@
 from listasenlazadas import *
 from Clases import *
 from ListaObjetos import *
+from Funciones_para_json import * 
 import matplotlib.pyplot as mlp
 
 #----------------
@@ -540,13 +541,26 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,
                 print("Su contraseña se ha cambiado con éxito.")
 #salir
         if eleccion_clase=='S' or eleccion_clase =="s":
-            return
+            json_a_normal(Clases.empleado,r'Jsons\empleado.json')
+            json_a_normal(Clases.avion,r'Jsons\avion.json') 
+            lista_persona.enlazada_a_jason(r'Jsons\persona.json',atributo_fecha='fecha_de_nacimiento')
+            lista_vuelo.enlazada_a_jason(r'Jsons\vuelo.json')
+            lista_viaje.enlazada_a_jason(r'Jsons\viaje.json',atributo_con_objeto='pasajeros')
+            lista_reserva.enlazada_a_jason(r'Jsons\reserva.json')
+            menu()
 
 #Menu de ingreso
 
 def menu():
     inicio = True
     while inicio == True:
+        lista_empleado=json_a_normal(Clases.empleado,r'Jsons\empleado.json')
+        lista_avion=json_a_normal(Clases.avion,r'Jsons\avion.json') 
+        lista_persona=json_a_enlazada(Clases.persona,r'Jsons\persona.json','fecha_de_nacimiento')
+        lista_vuelo=json_a_enlazada(Clases.vuelo,r'Jsons\vuelo.json') 
+        lista_viaje=json_a_enlazada(Clases.viaje,r'Jsons\viaje.json','fecha','pasajeros',Clases.persona)
+        lista_reserva=json_a_enlazada(Clases.reserva,r'Jsons\reserva.json')
+        
         print("\033[1mBienvenido a aerolineas Mamba\033[0m")
         print("                                       |")
         print("                                       |")

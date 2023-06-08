@@ -1,7 +1,7 @@
 import Clases
 import datetime
 from listasenlazadas import *
-
+import json
 #Este archivo tiene instancias de objetos por defecto
 
 lista_persona=Lista()
@@ -171,8 +171,6 @@ lista_reserva.append(Nodo(reserva7))
 lista_reserva.append(Nodo(reserva8))
 lista_reserva.append(Nodo(reserva9))
 lista_reserva.append(Nodo(reserva10))
-
-lista_reserva.guardar_lista("reserva.json")
 
 
 

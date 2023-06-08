@@ -196,8 +196,10 @@ class persona:
     
 #empleado
 class empleado(persona):
-    def __init__(self,DNI,nombre,apellido,sexo,fecha_de_nacimiento,pais,legajo,sector):
+    def __init__(self,DNI,nombre,apellido,sexo,fecha_de_nacimiento,pais,legajo,sector,mail=None,telefono=None): #Raroo
         super().__init__(DNI,nombre,apellido,sexo,fecha_de_nacimiento,pais,None,None)
+        self.mail=mail
+        self.telefono=telefono
         self.legajo=legajo
         self.sector=sector
     
@@ -384,13 +386,13 @@ class vuelo:
 #viaje   
 class viaje:
     capacidad=5
-    def __init__(self,nro_viaje,nro_vuelo,nro_serie,fecha):
+    def __init__(self,nro_viaje,nro_vuelo,nro_serie,fecha,pasajeros=[],contador_pasajeros=0):
         self.nro_viaje=nro_viaje
         self.nro_vuelo=nro_vuelo
         self.nro_serie=nro_serie
         self.fecha=fecha
-        self.pasajeros=[]
-        self.contador_pasajeros = 0
+        self.pasajeros=pasajeros
+        self.contador_pasajeros =contador_pasajeros
 
     def str_pasajero(self):
         ret = "["
@@ -489,12 +491,12 @@ class reserva:
     def __init__(self,nro_reserva,DNI_cliente,legajo_empleado,nro_viaje,monto):
         self.nro_reserva=nro_reserva
         self.DNI_cliente=DNI_cliente
-        self.empleado=legajo_empleado
+        self.legajo_empleado=legajo_empleado
         self.nro_viaje=nro_viaje
         self.monto=monto
 
     def __str__(self):
-        return f"Nro reserva: {self.nro_reserva}, DNI cliente: {self.DNI_cliente}, Legajo empleado: {self.empleado}, Nro viaje: {self.nro_viaje}, Monto: {self.monto}"
+        return f"Nro reserva: {self.nro_reserva}, DNI cliente: {self.DNI_cliente}, Legajo empleado: {self.legajo_empleado}, Nro viaje: {self.nro_viaje}, Monto: {self.monto}"
 
     #Pide que el nro de reserva sea un numérico de 4 dígitos
     @staticmethod
