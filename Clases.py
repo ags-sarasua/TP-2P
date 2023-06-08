@@ -380,7 +380,8 @@ class viaje:
     def str_pasajero(self):
         ret = "["
         if len(self.pasajeros) == 0:
-            pass
+                ret += "]"
+                return ret
         for pasajero in self.pasajeros[:-1]:
             ret += str(pasajero.DNI) + ", "
         ret += str(self.pasajeros[-1].DNI)
@@ -407,7 +408,7 @@ class viaje:
             nodo_actual = nodo_actual.prox
         print("El número de viaje no fue encontrado.")
         return False
-    def eliminar_pasajero(nro_viaje, pasajero, lista_viaje):  #¡¡¡¡¡¡¡MODIFICAR COMO EL DE ARRIBA!!!!!!!!!
+    def eliminar_pasajero(nro_viaje, pasajero, lista_viaje):  
         nodo_actual = lista_viaje.head
         while nodo_actual is not None:
             if nodo_actual.dato.nro_viaje == nro_viaje:

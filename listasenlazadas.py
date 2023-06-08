@@ -58,7 +58,7 @@ class Lista():
         dato = self.buscar_inst(input_principal, atributo_principal)
         if dato:
             return getattr(dato,atributo_a_buscar)
-        return False
+        return False 
         
 
 
