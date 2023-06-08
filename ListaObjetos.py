@@ -120,6 +120,8 @@ viaje8=Clases.viaje("8765", "1008", "2345678901", datetime.date(2023, 8, 15))
 viaje9=Clases.viaje("3568", "1009", "1234567891", datetime.date(2023, 2, 17))
 viaje10=Clases.viaje("0965","1010", "2345678901", datetime.date(2023, 5, 19))
 
+
+
 lista_viaje.append(Nodo(viaje1))
 lista_viaje.append(Nodo(viaje2))
 lista_viaje.append(Nodo(viaje3))
@@ -130,6 +132,9 @@ lista_viaje.append(Nodo(viaje7))
 lista_viaje.append(Nodo(viaje8))
 lista_viaje.append(Nodo(viaje9))
 lista_viaje.append(Nodo(viaje10))
+
+#lista_viaje.guardar_lista("viaje.txt")
+
 
 #reserva
 lista_reserva=Lista()
@@ -167,7 +172,18 @@ lista_reserva.append(Nodo(reserva8))
 lista_reserva.append(Nodo(reserva9))
 lista_reserva.append(Nodo(reserva10))
 
+lista_reserva.guardar_lista("reserva.json")
 
 
 
-
+######
+"""
+def jsonHandler(archivo):
+    with open(archivo,'r') as f:
+        try:
+            jsonData=json.load(f)
+        except json.decoder.JSONDecodeError:
+            jsonData=[]
+        return jsonData
+dict.values()
+"""

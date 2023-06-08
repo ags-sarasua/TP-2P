@@ -38,7 +38,7 @@ def validarFecha():
 
 #login recibe un usuario y una contraseña para chequear si está en el sistema. 
 def login(username, password):
-        with open("Usuarios.txt", 'r', encoding='utf-8') as archivo:
+        with open("TP-2P\\Usuarios.txt", 'r', encoding='utf-8') as archivo:
             listaUsuarios=[]
             passwordList=[]
             for linea in archivo:
@@ -55,18 +55,33 @@ def login(username, password):
 
 #registrarse escribe el archivo que tiene los usuarios y contraseñas para registrar un nuevo usuario
 def registrarse(username):
-    with open("Usuarios.txt", 'r', encoding='utf-8') as archivo:
+    with open("TP-2P\\Usuarios.txt", 'r', encoding='utf-8') as archivo:
         listaUsuarios=[]
         for linea in archivo:
             usu = linea.strip().split(".")[0]
             listaUsuarios.append(usu)
-    while username in listaUsuarios:
-        username = input("Este nombre de usuario ya existe. Ingrese otro: ")
+    while username in listaUsuarios or "." in username:
+        username = input("Este nombre de usuario no es válido. Ingrese otro: ")
     password = input("Ingrese una contraseña: ")
-    with open("Usuarioss.txt", 'a', encoding='utf-8') as archivo:
+    with open("TP-2P\\Usuarios.txt", 'a', encoding='utf-8') as archivo:
         archivo.write(f"\n{username}.{password}")
         return True
-    
+
+def actualizar_contra(us, con):
+    with open("TP-2P\\Usuarios.txt", 'r', encoding='utf-8') as archivo:
+        listaUsuarios=[]
+        passwordList=[]
+        for linea in archivo:
+            usu, contra = linea.strip().split(".")
+            listaUsuarios.append(usu)
+            passwordList.append(contra)    
+        index = listaUsuarios.index(us)
+        passwordList[index] = con
+    with open("TP-2P\\Usuarios.txt", 'w', encoding='utf-8') as archivo:
+        for i, j in zip(listaUsuarios, passwordList):
+            archivo.write(f"{i}.{j}\n")
+        return True
+
 #actualizar para las listas fijas
 def actualizar(lista, input_principal, atributo_principal, atributo_a_buscar, nuevo_input):
     for objeto in lista:
