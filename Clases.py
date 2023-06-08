@@ -60,8 +60,8 @@ def registrarse(username):
         for linea in archivo:
             usu = linea.strip().split(".")[0]
             listaUsuarios.append(usu)
-    while username in listaUsuarios:
-        username = input("Este nombre de usuario ya existe. Ingrese otro: ")
+    while username in listaUsuarios or "." in username:
+        username = input("Este nombre de usuario no es válido. Ingrese otro: ")
     password = input("Ingrese una contraseña: ")
     with open("TP-2P\\Usuarios.txt", 'a', encoding='utf-8') as archivo:
         archivo.write(f"\n{username}.{password}")
