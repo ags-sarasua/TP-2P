@@ -1,0 +1,12 @@
+Acá van los cambios que hicimos
+
+Updates:
+-Usuario: un usuario puede cambiar su contraseña, modificando con ello al archivo Usuarios.txt.
+-Manejo de archivos: todos los objetos pasaron a respaldarse en su respectivo archivo, de formato JSON.
+-Nuevo orden de menú: cada opción elegida en el menú principal llama a una función destinada a esa sección. 
+-Manejo de errores: al momento de abrir un archivo, si no puede realizarse la acción, se finaliza el programa.
+-Árboles: se implementó el arbolVuelo, el cual tiene dentro de sí todos los objetos de la clase Vuelo, organizados por su ID (nro_vuelo). Se eligió la clase vuelo para implementar el árbol porque no se modifican tanto las instancias: es más común la búsqueda de un vuelo en particular para agregar un viaje.
+-Colas: nueva funcionalidad para el mantenimiento de los aviones. Al llamarla, el avión más antiguo sale de la lista y pasa a ser último de la lista, con una nueva fecha de alta (el día de la fecha) 
+-Objeto como atributo: la clase reserva pasa a tener, en lugar del DNI de la persona pasa a tener el objeto de esa persona.
+
+Observaciones:

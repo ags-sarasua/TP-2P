@@ -1,5 +1,7 @@
 import json
 
+
+
 class Nodo():
     def __init__(self,dato=None,prox=None):
         self.dato=dato
@@ -59,7 +61,7 @@ class Lista():
         dato = self.buscar_inst(input_principal, atributo_principal)
         if dato:
             return getattr(dato,atributo_a_buscar)
-        return False
+        return False 
         
 
 
@@ -76,17 +78,23 @@ class Lista():
         
         return False
 
-    def guardar_lista(self, nombre_archivo):
+    def enlazada_a_jason(self, nombre_archivo,atributo_fecha=None,atributo_con_objeto=None):
+        lista_diccionarios=[]
+        self.guardar_lista_recursivo(self.head, nombre_archivo,lista_diccionarios,atributo_fecha=None,atributo_con_objeto=None)
         with open(nombre_archivo, "w") as archivo:
-            self.guardar_lista_recursivo(self.head, archivo)
+            json.dump(lista_diccionarios,archivo,indent=2)
     
-    def guardar_lista_recursivo(self, nodo, archivo):
+    def guardar_lista_recursivo(self, nodo, nombre_archivo,lista_diccionarios,atributo_fecha=None,atributo_con_objeto=None):
         if nodo is None:
             return
-        
-        #Guardar la información del nodo en el archivo
-        json.dump(nodo.dato.__dict__,archivo)
-
+        #Chequeos
+        if atributo_fecha!=None:
+            fecha = getattr(nodo.dato, atributo_fecha)
+            setattr(nodo.dato, atributo_fecha, fecha.isoformat())
+        if atributo_con_objeto !=None:
+            lista_objetos = getattr(nodo.dato, atributo_con_objeto)
+            setattr(nodo.dato, atributo_con_objeto, [nested_objeto.__dict__ for nested_objeto in lista_objetos])
+        lista_diccionarios.append(nodo.dato.__dict__)
         #Llamada recursiva a los nodos proximos
-        self.guardar_lista_recursivo(nodo.prox, archivo)
+        self.guardar_lista_recursivo(nodo.prox, nombre_archivo,lista_diccionarios)
         return

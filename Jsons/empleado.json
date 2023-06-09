@@ -1,0 +1,122 @@
+[
+  {
+    "DNI": "12775678",
+    "nombre": "Juan",
+    "apellido": "Perez",
+    "sexo": "Masculino",
+    "fecha_de_nacimiento": "03/05/1990",
+    "pais": "Argentina",
+    "mail": null,
+    "telefono": null,
+    "legajo": "1234",
+    "sector": "Administrativo"
+  },
+  {
+    "DNI": "87611321",
+    "nombre": "Mar\u00eda",
+    "apellido": "Gomez",
+    "sexo": "Femenino",
+    "fecha_de_nacimiento": "15/02/1995",
+    "pais": "Argentina",
+    "mail": null,
+    "telefono": null,
+    "legajo": "5678",
+    "sector": "Piloto"
+  },
+  {
+    "DNI": "23422789",
+    "nombre": "Pedro",
+    "apellido": "Rodriguez",
+    "sexo": "Masculino",
+    "fecha_de_nacimiento": "20/11/1985",
+    "pais": "Espa\u00f1a",
+    "mail": null,
+    "telefono": null,
+    "legajo": "9012",
+    "sector": "Tecnico"
+  },
+  {
+    "DNI": "98733432",
+    "nombre": "Ana",
+    "apellido": "Gonzalez",
+    "sexo": "Femenino",
+    "fecha_de_nacimiento": "07/07/1992",
+    "pais": "M\u00e9xico",
+    "mail": null,
+    "telefono": null,
+    "legajo": "3456",
+    "sector": "Administrativo"
+  },
+  {
+    "DNI": "34545890",
+    "nombre": "Miguel",
+    "apellido": "Fern\u00e1ndez",
+    "sexo": "Masculino",
+    "fecha_de_nacimiento": "12/03/1980",
+    "pais": "Argentina",
+    "mail": null,
+    "telefono": null,
+    "legajo": "7890",
+    "sector": "Tecnico"
+  },
+  {
+    "DNI": "01255567",
+    "nombre": "Lucia",
+    "apellido": "Martinez",
+    "sexo": "Femenino",
+    "fecha_de_nacimiento": "18/08/1998",
+    "pais": "Argentina",
+    "mail": null,
+    "telefono": null,
+    "legajo": "2345",
+    "sector": "Piloto"
+  },
+  {
+    "DNI": "78966234",
+    "nombre": "Gustavo",
+    "apellido": "Suarez",
+    "sexo": "Masculino",
+    "fecha_de_nacimiento": "25/09/1987",
+    "pais": "Uruguay",
+    "mail": null,
+    "telefono": null,
+    "legajo": "3456",
+    "sector": "Administrativo"
+  },
+  {
+    "DNI": "45677901",
+    "nombre": "Julia",
+    "apellido": "Fern\u00e1ndez",
+    "sexo": "Femenino",
+    "fecha_de_nacimiento": "01/01/1991",
+    "pais": "Argentina",
+    "mail": null,
+    "telefono": null,
+    "legajo": "1235",
+    "sector": "Piloto"
+  },
+  {
+    "DNI": "89088345",
+    "nombre": "Andr\u00e9s",
+    "apellido": "Romero",
+    "sexo": "Masculino",
+    "fecha_de_nacimiento": "10/06/1982",
+    "pais": "Colombia",
+    "mail": null,
+    "telefono": null,
+    "legajo": "5679",
+    "sector": "Tecnico"
+  },
+  {
+    "DNI": "54399109",
+    "nombre": "Liliana",
+    "apellido": "D\u00edaz",
+    "sexo": "Femenino",
+    "fecha_de_nacimiento": "24/12/1993",
+    "pais": "Argentina",
+    "mail": null,
+    "telefono": null,
+    "legajo": "9013",
+    "sector": "Administrativo"
+  }
+]

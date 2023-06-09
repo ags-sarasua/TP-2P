@@ -1,7 +1,7 @@
 import Clases
 import datetime
 from listasenlazadas import *
-
+import json
 #Este archivo tiene instancias de objetos por defecto
 
 lista_persona=Lista()
@@ -144,11 +144,11 @@ reserva2=Clases.reserva("1002", "23456789", "3456", "2746" , "1800")
 reserva3=Clases.reserva("1003", "34567890", "1234", "3578" , "2200")
 reserva4=Clases.reserva("1004", "45678901", "3456", "4390" , "1900")
 reserva5=Clases.reserva("1005", "56789012", "3456", "4545" , "2000")
-reserva6=Clases.reserva("1006", "67890123", "1234", "2368" , "2300")
-reserva7=Clases.reserva("1007", "78901234", "3456", "2356" , "2500")
-reserva8=Clases.reserva("1008", "89012345", "9013", "8765" , "2700")
-reserva9=Clases.reserva("1009", "90123456", "1234", "3568" , "1800")
-reserva10=Clases.reserva("1010", "67899123", "9013", "0965" , "3000")
+reserva6=Clases.reserva("1006", "67899123", "1234", "2368" , "2300")
+reserva7=Clases.reserva("1007", "67890123", "3456", "2356" , "2500")
+reserva8=Clases.reserva("1008", "78901234", "9013", "8765" , "2700")
+reserva9=Clases.reserva("1009", "89012345", "1234", "3568" , "1800")
+reserva10=Clases.reserva("1010", "90123456", "9013", "0965" , "3000")
 
 Clases.viaje.agregar_pasajero( "1464", p1,lista_viaje)
 Clases.viaje.agregar_pasajero( "2746",p2 ,lista_viaje)
@@ -171,8 +171,6 @@ lista_reserva.append(Nodo(reserva7))
 lista_reserva.append(Nodo(reserva8))
 lista_reserva.append(Nodo(reserva9))
 lista_reserva.append(Nodo(reserva10))
-
-lista_reserva.guardar_lista("reserva.json")
 
 
 
