@@ -334,6 +334,14 @@ class vuelo:
         self.legajo_piloto=legajo_piloto
         self.precio=precio
 
+    def __gt__(self, other):
+        return self.nro_vuelo > other.nro_vuelo
+    
+    def __lt__(self, other):
+        return self.nro_vuelo < other.nro_vuelo
+
+    def __eq__(self, other):
+        return self.nro_vuelo == other.nro_vuelo
 
     def __str__(self):
         return f"Nro de vuelo: {self.nro_vuelo}, Aeropuerto orígen: {self.aeropuerto_salida}, Aeropuerto destino: {self.aeropuerto_llegada}, Legajo Piloto: {self.legajo_piloto}, Precio: {self.precio}"
@@ -546,3 +554,82 @@ class reserva:
                 return precio
             else: 
                 precio=input('Monto incorrecto, ingrese nuevamente su monto:    ')
+
+class NodoarbolVuelo:
+    #constructor
+    def __init__(self,dato=None):
+        self.dato=dato
+        self.derecho=None
+        self.izquierdo=None
+
+    def agregarnodos(raiz,nodo):
+        if raiz.dato<nodo.dato:
+            if raiz.derecho==None:
+                raiz.derecho=nodo
+            else:
+                 raiz.derecho.agregarnodos(nodo)
+        elif raiz.dato>nodo.dato:
+            if raiz.izquierdo==None:
+                raiz.izquierdo=nodo
+            else:
+                raiz.izquierdo.agregarnodos(nodo)
+
+class arbolVuelo:
+    def __init__(self,nodo=None):
+        self.root=nodo
+       
+    def agregarnodos(raiz,nodo):
+        if raiz.dato<nodo.dato:
+            if raiz.derecho==None:
+                raiz.derecho=nodo
+            else:
+                 raiz.derecho.agregarnodos(nodo)
+        elif raiz.dato>nodo.dato:
+            if raiz.izquierdo==None:
+                raiz.izquierdo=nodo
+            else:
+                raiz.izquierdo.agregarnodos(nodo)
+
+    # agregar al arbolVuelo
+    def agregarnodo(self,nodo):
+        if self.root==None:
+            self.root=nodo
+        else:
+            root=self.root
+            #NodoArbol.agregarnodos(root,nodo)
+            root.agregarnodos(nodo)
+    
+    def buscarNodo(self,nodo):
+        if self.root==None:
+            return("Este árbol está vacío")
+        pass
+
+   # Mostrar el arbolVuelo en preorden
+    def preorder(nodo):
+        if nodo:
+            print(nodo.dato)
+            arbolVuelo.preorder(nodo.nro_vuelo.izquierdo)
+            arbolVuelo.preorder(nodo.nro_vuelo.derecho)
+    
+    # Mostrar el arbolVuelo en inorden
+    def inorder(nodo):
+        if(nodo):
+            arbolVuelo.inorder(nodo.nro_vuelo.izquierdo)
+            print(nodo.dato)
+            arbolVuelo.inorder(nodo.nro_vuelo.derecho)
+    
+    # Mostrar en postorden
+    def posorden(nodo):
+        if nodo:
+            arbolVuelo.posorden(nodo.nro_vuelo.izquierdo)
+            arbolVuelo.posorden(nodo.nro_vuelo.derecho)
+            print(nodo.dato)
+
+"""
+def llenararbol():
+    for vuelo in lista_vuelo:
+        arbolVuelo.agregarnodo(vuelo)
+"""
+
+
+
