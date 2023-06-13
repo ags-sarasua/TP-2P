@@ -183,10 +183,6 @@ reserva7=Clases.reserva("1007", "67890123", "3456", "2356" , "2500")
 reserva8=Clases.reserva("1008", "78901234", "9013", "8765" , "2700")
 reserva9=Clases.reserva("1009", "89012345", "1234", "3568" , "1800")
 reserva10=Clases.reserva("1010", "90123456", "9013", "0965" , "3000")
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 """
 Clases.viaje.agregar_pasajero( "1464", p1,lista_viaje)
 Clases.viaje.agregar_pasajero( "2746",p2 ,lista_viaje)
@@ -198,7 +194,7 @@ Clases.viaje.agregar_pasajero( "2356", p7,lista_viaje)
 Clases.viaje.agregar_pasajero( "8765",p8 ,lista_viaje)
 Clases.viaje.agregar_pasajero( "3568", p9,lista_viaje)
 Clases.viaje.agregar_pasajero( "0965",p10 ,lista_viaje)
-"""
+
 
 lista_reserva.append(Nodo(reserva1))
 lista_reserva.append(Nodo(reserva2))
@@ -209,18 +205,5 @@ lista_reserva.append(Nodo(reserva6))
 lista_reserva.append(Nodo(reserva7))
 lista_reserva.append(Nodo(reserva8))
 lista_reserva.append(Nodo(reserva9))
-lista_reserva.append(Nodo(reserva10))"""
-
-
-
-######
-"""
-def jsonHandler(archivo):
-    with open(archivo,'r') as f:
-        try:
-            jsonData=json.load(f)
-        except json.decoder.JSONDecodeError:
-            jsonData=[]
-        return jsonData
-dict.values()
+lista_reserva.append(Nodo(reserva10)
 """

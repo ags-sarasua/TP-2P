@@ -1,5 +1,0 @@
-. Update
-
--Base de datos: los datos de las ejecuciones se guardan en sus repectivos archivos json. Las funciones GENERICAS se encuentran en 
-        Funciones_para_json.py y en listasenlazadas.py. Se utilizo recursividad, listas enlazadas, diccionarios y manejo de archivos.
-        Nuestra mayor dificultad transformar objetos adentro de objetos, junto con la limitacion de datos que acepta json.  
