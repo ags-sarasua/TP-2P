@@ -577,67 +577,10 @@ class NodoarbolVuelo:
             else:
                 raiz.izquierda.agregarnodos(nodo)
 
-class arbolVuelo:
-    def __init__(self,nodo=None):
-        self.root=nodo
-       
-    def agregarnodos(raiz,nodo):
-        if raiz.dato<nodo.dato:
-            if raiz.derecha==None:
-                raiz.derecha=nodo
-            else:
-                 raiz.derecha.agregarnodos(nodo)
-        elif raiz.dato>nodo.dato:
-            if raiz.izquierda==None:
-                raiz.izquierda=nodo
-            else:
-                raiz.izquierda.agregarnodos(nodo)
-
-    # agregar al arbolVuelo
-    def agregarnodo(self,nodo):
-        if self.root==None:
-            self.root=nodo
-        else:
-            root=self.root
-            #NodoArbol.agregarnodos(root,nodo)
-            root.agregarnodos(nodo)
-    
-    def buscarNodo(self,nodo):
-        if self.root==None:
-            return("Este árbol está vacío")
-        pass
-
-   # Mostrar el arbolVuelo en preorden
-    def preorder(nodo):
-        if nodo:
-            print(nodo.dato)
-            arbolVuelo.preorder(nodo.nro_vuelo.izquierda)
-            arbolVuelo.preorder(nodo.nro_vuelo.derecha)
-    
-    # Mostrar el arbolVuelo en inorden
-    def inorder(nodo):
-        if(nodo):
-            arbolVuelo.inorder(nodo.nro_vuelo.izquierda)
-            print(nodo.dato)
-            arbolVuelo.inorder(nodo.nro_vuelo.derecha)
-    
-    # Mostrar en postorden
-    def posorden(nodo):
-        if nodo:
-            arbolVuelo.posorden(nodo.nro_vuelo.izquierda)
-            arbolVuelo.posorden(nodo.nro_vuelo.derecha)
-            print(nodo.dato)
 
 
 
-
-"""
-def llenararbol():
-    for vuelo in lista_vuelo:
-        arbolVuelo.agregarnodo(vuelo)
-"""
-
-class Nodo:
+class Nodo_arbol:
 
     #constructor
     def __init__(self,valor=None):
@@ -646,7 +589,7 @@ class Nodo:
         self.izquierda=None
 
 
-class arbol():
+class Arbol_vuelo():
 
 
     def __init__(self,nodo=None):
@@ -654,19 +597,19 @@ class arbol():
 
     def insertar(self,valor):
         if self.raiz is None:
-            self.raiz = Nodo(valor)
+            self.raiz = Nodo_arbol(valor)
         else:
             self.insertar_ordenado(valor,self.raiz)
     
     def insertar_ordenado(self,valor,nodo_actual):
         if valor.nro_vuelo < nodo_actual.valor.nro_vuelo:
             if nodo_actual.izquierda is None:
-                nodo_actual.izquierda = Nodo(valor)
+                nodo_actual.izquierda = Nodo_arbol(valor)
             else:
                 self.insertar_ordenado(valor, nodo_actual.izquierda)
         else:
             if nodo_actual.derecha is None:
-                nodo_actual.derecha = Nodo(valor)
+                nodo_actual.derecha = Nodo_arbol(valor)
             else:
                 self.insertar_ordenado(valor, nodo_actual.derecha)
     
