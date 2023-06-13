@@ -38,7 +38,7 @@ def validarFecha():
 
 #login recibe un usuario y una contraseña para chequear si está en el sistema. 
 def login(username, password):
-        with open("TP-2P\\Usuarios.txt", 'r', encoding='utf-8') as archivo:
+        with open("C:\\Users\\Ignacio\\OneDrive\\Documents\\GitHub\\TP-2P\\Usuarios.txt", 'r', encoding='utf-8') as archivo:
             listaUsuarios=[]
             passwordList=[]
             for linea in archivo:
@@ -394,7 +394,7 @@ class vuelo:
 #viaje   
 class viaje:
     capacidad=5
-    def __init__(self,nro_viaje,nro_vuelo,nro_serie,fecha,pasajeros=[],contador_pasajeros=0):
+    def __init__(self,nro_viaje,nro_vuelo,nro_serie,fecha,pasajeros=[],contador_pasajeros=5):
         self.nro_viaje=nro_viaje
         self.nro_vuelo=nro_vuelo
         self.nro_serie=nro_serie

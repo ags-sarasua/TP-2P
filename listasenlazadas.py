@@ -78,23 +78,32 @@ class Lista():
         
         return False
 
-    def enlazada_a_jason(self, nombre_archivo,atributo_fecha=None,atributo_con_objeto=None):
+    def enlazada_a_jason(self, nombre_archivo,atributo_fecha=None,atributo_con_objeto=None,atributo_fecha_nested=None):
+        print(atributo_fecha)
         lista_diccionarios=[]
-        self.guardar_lista_recursivo(self.head, nombre_archivo,lista_diccionarios,atributo_fecha=None,atributo_con_objeto=None)
-        with open(nombre_archivo, "w") as archivo:
-            json.dump(lista_diccionarios,archivo,indent=2)
+        self.guardar_lista_recursivo(self.head,nombre_archivo,lista_diccionarios,atributo_fecha,atributo_con_objeto,atributo_fecha_nested)
+        with open(nombre_archivo, "w",encoding="utf-8") as archivo:
+            print(lista_diccionarios)
+            json.dump(lista_diccionarios,archivo,indent=2,ensure_ascii=False)
     
-    def guardar_lista_recursivo(self, nodo, nombre_archivo,lista_diccionarios,atributo_fecha=None,atributo_con_objeto=None):
+    def guardar_lista_recursivo(self, nodo, nombre_archivo,lista_diccionarios,atributo_fecha,atributo_con_objeto,atributo_fecha_nested):
         if nodo is None:
             return
         #Chequeos
         if atributo_fecha!=None:
             fecha = getattr(nodo.dato, atributo_fecha)
             setattr(nodo.dato, atributo_fecha, fecha.isoformat())
+            
         if atributo_con_objeto !=None:
             lista_objetos = getattr(nodo.dato, atributo_con_objeto)
+            print(lista_objetos)
+            for nested_objeto in lista_objetos:
+                if atributo_fecha_nested!=None:
+                    fecha = getattr(nested_objeto, atributo_fecha_nested)
+                    setattr(nested_objeto, atributo_fecha_nested, fecha.isoformat())
+                    print(nested_objeto)
             setattr(nodo.dato, atributo_con_objeto, [nested_objeto.__dict__ for nested_objeto in lista_objetos])
         lista_diccionarios.append(nodo.dato.__dict__)
         #Llamada recursiva a los nodos proximos
-        self.guardar_lista_recursivo(nodo.prox, nombre_archivo,lista_diccionarios)
+        self.guardar_lista_recursivo(nodo.prox, nombre_archivo,lista_diccionarios,atributo_fecha,atributo_con_objeto,atributo_fecha_nested)
         return

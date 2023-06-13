@@ -13,7 +13,7 @@
   },
   {
     "DNI": "87611321",
-    "nombre": "Mar\u00eda",
+    "nombre": "María",
     "apellido": "Gomez",
     "sexo": "Femenino",
     "fecha_de_nacimiento": "15/02/1995",
@@ -29,7 +29,7 @@
     "apellido": "Rodriguez",
     "sexo": "Masculino",
     "fecha_de_nacimiento": "20/11/1985",
-    "pais": "Espa\u00f1a",
+    "pais": "España",
     "mail": null,
     "telefono": null,
     "legajo": "9012",
@@ -41,7 +41,7 @@
     "apellido": "Gonzalez",
     "sexo": "Femenino",
     "fecha_de_nacimiento": "07/07/1992",
-    "pais": "M\u00e9xico",
+    "pais": "México",
     "mail": null,
     "telefono": null,
     "legajo": "3456",
@@ -50,7 +50,7 @@
   {
     "DNI": "34545890",
     "nombre": "Miguel",
-    "apellido": "Fern\u00e1ndez",
+    "apellido": "Fernández",
     "sexo": "Masculino",
     "fecha_de_nacimiento": "12/03/1980",
     "pais": "Argentina",
@@ -86,7 +86,7 @@
   {
     "DNI": "45677901",
     "nombre": "Julia",
-    "apellido": "Fern\u00e1ndez",
+    "apellido": "Fernández",
     "sexo": "Femenino",
     "fecha_de_nacimiento": "01/01/1991",
     "pais": "Argentina",
@@ -97,7 +97,7 @@
   },
   {
     "DNI": "89088345",
-    "nombre": "Andr\u00e9s",
+    "nombre": "Andrés",
     "apellido": "Romero",
     "sexo": "Masculino",
     "fecha_de_nacimiento": "10/06/1982",
@@ -110,7 +110,7 @@
   {
     "DNI": "54399109",
     "nombre": "Liliana",
-    "apellido": "D\u00edaz",
+    "apellido": "Díaz",
     "sexo": "Femenino",
     "fecha_de_nacimiento": "24/12/1993",
     "pais": "Argentina",

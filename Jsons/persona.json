@@ -5,7 +5,7 @@
     "apellido": "Fangio",
     "sexo": "Femenino",
     "fecha_de_nacimiento": "1988-04-15",
-    "pais": "Espa\u00f1a",
+    "pais": "España",
     "mail": "ana@gmail.com",
     "telefono": "1111111111"
   },
@@ -25,7 +25,7 @@
     "apellido": "Risso",
     "sexo": "Femenino",
     "fecha_de_nacimiento": "1982-08-02",
-    "pais": "M\u00e9xico",
+    "pais": "México",
     "mail": "luisa@gmail.com",
     "telefono": "2345678901"
   },
@@ -41,18 +41,18 @@
   },
   {
     "DNI": "56789012",
-    "nombre": "Luc\u00eda",
+    "nombre": "Lucía",
     "apellido": "Nagatomo",
     "sexo": "Femenino",
     "fecha_de_nacimiento": "1975-12-04",
-    "pais": "Jap\u00f3n",
+    "pais": "Japón",
     "mail": "lucia@gmail.com",
     "telefono": "4567890123"
   },
   {
     "DNI": "67899123",
-    "nombre": "Luc\u00eda",
-    "apellido": "Fern\u00e1ndez",
+    "nombre": "Lucía",
+    "apellido": "Fernández",
     "sexo": "Femenino",
     "fecha_de_nacimiento": "1993-03-25",
     "pais": "Brasil",
@@ -61,7 +61,7 @@
   },
   {
     "DNI": "67890123",
-    "nombre": "Sof\u00eda",
+    "nombre": "Sofía",
     "apellido": "Venegas",
     "sexo": "Femenino",
     "fecha_de_nacimiento": "1986-02-20",
@@ -85,8 +85,18 @@
     "apellido": "Yema",
     "sexo": "Femenino",
     "fecha_de_nacimiento": "1978-09-18",
-    "pais": "Canad\u00e1",
+    "pais": "Canadá",
     "mail": "carla@gamil.com",
     "telefono": "8901234567"
+  },
+  {
+    "DNI": "90123456",
+    "nombre": "Pablo",
+    "apellido": "Leuco",
+    "sexo": "Masculino",
+    "fecha_de_nacimiento": "1980-05-29",
+    "pais": "Australia",
+    "mail": "pablo@gmail.com",
+    "telefono": "9012345678"
   }
 ]

@@ -61,5 +61,12 @@
     "aeropuerto_llegada": "HND",
     "legajo_piloto": "1235",
     "precio": "1800"
+  },
+  {
+    "nro_vuelo": "1010",
+    "aeropuerto_salida": "EZE",
+    "aeropuerto_llegada": "BDX",
+    "legajo_piloto": "1235",
+    "precio": "3000"
   }
 ]
