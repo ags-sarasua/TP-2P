@@ -94,7 +94,7 @@ vuelo7 = Clases.vuelo('1007',"ORD", "SFO",'2345' ,'2500')
 vuelo8 = Clases.vuelo('1008',"CDG", "LHR",'1235' ,'2700')
 vuelo9 = Clases.vuelo('1009',"ICN", "HND",'1235','1800')
 vuelo10 = Clases.vuelo('1010',"EZE", "BDX",'1235','3000')
-
+"""
 lista_vuelo.append(Nodo(vuelo1))
 lista_vuelo.append(Nodo(vuelo2))
 lista_vuelo.append(Nodo(vuelo3))
@@ -104,7 +104,41 @@ lista_vuelo.append(Nodo(vuelo6))
 lista_vuelo.append(Nodo(vuelo7))
 lista_vuelo.append(Nodo(vuelo8))
 lista_vuelo.append(Nodo(vuelo9))
-lista_vuelo.append(Nodo(vuelo10))
+lista_vuelo.append(Nodo(vuelo10))"""
+
+arbol=Clases.arbol()
+
+Clases.arbol.insertar(arbol,vuelo1)
+Clases.arbol.insertar(arbol,vuelo2)
+Clases.arbol.insertar(arbol,vuelo3)
+Clases.arbol.insertar(arbol,vuelo4)
+Clases.arbol.insertar(arbol,vuelo5)
+Clases.arbol.insertar(arbol,vuelo6)
+Clases.arbol.insertar(arbol,vuelo7)
+Clases.arbol.insertar(arbol,vuelo8)
+Clases.arbol.insertar(arbol,vuelo9)
+Clases.arbol.insertar(arbol,vuelo10)
+
+#Clases.arbol.postorden(arbol)
+
+Clases.arbol.eliminar(arbol,vuelo5)
+Clases.arbol.eliminar(arbol,vuelo9)
+Clases.arbol.eliminar(arbol,vuelo1)
+Clases.arbol.eliminar(arbol,vuelo6)
+Clases.arbol.eliminar(arbol,vuelo7)
+
+Clases.arbol.postorden(arbol)
+print("chadetumadre")
+Clases.arbol.preorden(arbol)
+
+print("chadetumadre2")
+
+print(Clases.arbol.buscar(arbol,"1002"))
+
+
+
+
+
 
 #viajes
 lista_viaje=Lista()
@@ -149,7 +183,10 @@ reserva7=Clases.reserva("1007", "67890123", "3456", "2356" , "2500")
 reserva8=Clases.reserva("1008", "78901234", "9013", "8765" , "2700")
 reserva9=Clases.reserva("1009", "89012345", "1234", "3568" , "1800")
 reserva10=Clases.reserva("1010", "90123456", "9013", "0965" , "3000")
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 """
 Clases.viaje.agregar_pasajero( "1464", p1,lista_viaje)
 Clases.viaje.agregar_pasajero( "2746",p2 ,lista_viaje)
@@ -172,7 +209,7 @@ lista_reserva.append(Nodo(reserva6))
 lista_reserva.append(Nodo(reserva7))
 lista_reserva.append(Nodo(reserva8))
 lista_reserva.append(Nodo(reserva9))
-lista_reserva.append(Nodo(reserva10))
+lista_reserva.append(Nodo(reserva10))"""
 
 
 
