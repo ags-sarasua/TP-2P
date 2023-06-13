@@ -3,7 +3,7 @@ from Clases import *
 from ListaObjetos import *
 from Funciones_para_json import * 
 import matplotlib.pyplot as mlp
-
+from colorama import init, Fore, Back, Style
 #----------------
 
 #menu una vez ingresado 
@@ -560,8 +560,9 @@ def menu():
         lista_vuelo=json_a_enlazada(Clases.vuelo,r'Jsons\vuelo.json') 
         lista_viaje=json_a_enlazada(Clases.viaje,r'Jsons\viaje.json','fecha','pasajeros',Clases.persona,'fecha_de_nacimiento')
         lista_reserva=json_a_enlazada(Clases.reserva,r'Jsons\reserva.json')
-        
-        print("\033[1mBienvenido a aerolineas Mamba\033[0m")
+        print('')
+        print(Fore.RED + "\033[1mBienvenido a aerolineas Mamba\033[0m")
+
         print("                                       |")
         print("                                       |")
         print("                                       |")

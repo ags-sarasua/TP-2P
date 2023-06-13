@@ -1,6 +1,6 @@
 import datetime
 from listasenlazadas import *
-
+from colorama import init, Fore, Back, Style
 
 #validarNum valida que un número ingresado por el usuario sea un número entre cierto rango pedido
 def validarNum(tipoDato: str, min: int, max: int) -> int:
@@ -428,7 +428,7 @@ class viaje:
                         print("El pasajero ya está en la lista.")
                         return False
                 else:
-                    print("El viaje ya está lleno.")
+                    print(Fore.RED +"El viaje ya está lleno.")
                     return False
             nodo_actual = nodo_actual.prox
         print("El número de viaje no fue encontrado.")
