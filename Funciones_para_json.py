@@ -4,7 +4,6 @@ from listasenlazadas import *
 import json
 from ListaObjetos import *
 
-
 def normal_a_jason(lista_clase, nombre_archivo, atributo_fecha=None):
     lista_diccionario=[]
     for objeto in lista_clase:
@@ -35,8 +34,6 @@ def json_a_normal(clase,nombre_archivo,atributo_fecha=None):
 json_a_normal(Clases.empleado,r'Jsons\empleado.json')
 json_a_normal(Clases.avion,r'Jsons\avion.json') 
 #PASARLE LA CLASE EN SI
-
-
     
 def json_a_enlazada(clase,nombre_archivo,atributo_fecha=None,atributo_con_objeto=None,clase_nested_objeto=None):
     lista_clase=Lista()
