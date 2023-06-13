@@ -150,6 +150,7 @@ reserva8=Clases.reserva("1008", "78901234", "9013", "8765" , "2700")
 reserva9=Clases.reserva("1009", "89012345", "1234", "3568" , "1800")
 reserva10=Clases.reserva("1010", "90123456", "9013", "0965" , "3000")
 
+"""
 Clases.viaje.agregar_pasajero( "1464", p1,lista_viaje)
 Clases.viaje.agregar_pasajero( "2746",p2 ,lista_viaje)
 Clases.viaje.agregar_pasajero( "3578", p3,lista_viaje)
@@ -160,6 +161,7 @@ Clases.viaje.agregar_pasajero( "2356", p7,lista_viaje)
 Clases.viaje.agregar_pasajero( "8765",p8 ,lista_viaje)
 Clases.viaje.agregar_pasajero( "3568", p9,lista_viaje)
 Clases.viaje.agregar_pasajero( "0965",p10 ,lista_viaje)
+"""
 
 lista_reserva.append(Nodo(reserva1))
 lista_reserva.append(Nodo(reserva2))

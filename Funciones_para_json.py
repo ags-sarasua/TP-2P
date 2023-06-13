@@ -58,6 +58,5 @@ def json_a_enlazada(clase,nombre_archivo,atributo_fecha=None,atributo_con_objeto
 
 #lista_persona.enlazada_a_jason(r'Jsons\persona.json',atributo_fecha='fecha_de_nacimiento')
 #lista_vuelo.enlazada_a_jason(r'Jsons\vuelo.json')
-print(lista_viaje)
 #lista_viaje.enlazada_a_jason(r'Jsons\viaje.json',atributo_fecha='fecha',atributo_con_objeto='pasajeros',atributo_fecha_nested='fecha_de_nacimiento')
 #lista_reserva.enlazada_a_jason(r'Jsons\reserva.json')
