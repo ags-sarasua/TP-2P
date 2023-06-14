@@ -452,9 +452,9 @@ class viaje:
 
     #Chequea que el vuelo existe en la clase Vuelo
     @staticmethod
-    def check_vuelo(nro_vuelo,lista_vuelo):
+    def check_vuelo(nro_vuelo,arbol_vuelo):
         while True:
-            if lista_vuelo.buscar_attr(nro_vuelo,"nro_vuelo","nro_vuelo"):
+            if arbol_vuelo.buscar(nro_vuelo):
                 return nro_vuelo
             else:
                 nro_vuelo = input("Error, el vuelo no existe. Intente de nuevo: ")
@@ -589,7 +589,7 @@ class Nodo_arbol:
         self.izquierda=None
 
 
-class Arbol_vuelo():
+class arbol():
 
 
     def __init__(self,nodo=None):
@@ -624,14 +624,13 @@ class Arbol_vuelo():
             return self.buscar_recursivo(dato, nodo_actual.izquierda)
         else:
             return self.buscar_recursivo(dato, nodo_actual.derecha)
-        print("No anda")
-    
+
     def preorden(self):
         self.preorden_recursivo(self.raiz)
     
     def preorden_recursivo(self, nodo_actual):
         if nodo_actual is not None:
-            print(nodo_actual.valor, end="")
+            print(nodo_actual.valor, end="/n")
             #Primero buscamos siempre a la izquierda
             self.preorden_recursivo(nodo_actual.izquierda)
             #Luego de ir todo a la izquierda, vamos a la derecha

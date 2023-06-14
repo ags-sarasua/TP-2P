@@ -106,35 +106,35 @@ lista_vuelo.append(Nodo(vuelo8))
 lista_vuelo.append(Nodo(vuelo9))
 lista_vuelo.append(Nodo(vuelo10))"""
 
-arbol=Clases.arbol()
+arbol_vuelos=Clases.arbol()
 
-Clases.arbol.insertar(arbol,vuelo1)
-Clases.arbol.insertar(arbol,vuelo2)
-Clases.arbol.insertar(arbol,vuelo3)
-Clases.arbol.insertar(arbol,vuelo4)
-Clases.arbol.insertar(arbol,vuelo5)
-Clases.arbol.insertar(arbol,vuelo6)
-Clases.arbol.insertar(arbol,vuelo7)
-Clases.arbol.insertar(arbol,vuelo8)
-Clases.arbol.insertar(arbol,vuelo9)
-Clases.arbol.insertar(arbol,vuelo10)
+Clases.arbol.insertar(arbol_vuelos,vuelo1)
+Clases.arbol.insertar(arbol_vuelos,vuelo2)
+Clases.arbol.insertar(arbol_vuelos,vuelo3)
+Clases.arbol.insertar(arbol_vuelos,vuelo4)
+Clases.arbol.insertar(arbol_vuelos,vuelo5)
+Clases.arbol.insertar(arbol_vuelos,vuelo6)
+Clases.arbol.insertar(arbol_vuelos,vuelo7)
+Clases.arbol.insertar(arbol_vuelos,vuelo8)
+Clases.arbol.insertar(arbol_vuelos,vuelo9)
+Clases.arbol.insertar(arbol_vuelos,vuelo10)
 
 #Clases.arbol.postorden(arbol)
+"""
+#Pruebas del arbol
 
-Clases.arbol.eliminar(arbol,vuelo5)
-Clases.arbol.eliminar(arbol,vuelo9)
-Clases.arbol.eliminar(arbol,vuelo1)
-Clases.arbol.eliminar(arbol,vuelo6)
-Clases.arbol.eliminar(arbol,vuelo7)
+Clases.arbol.eliminar(arbol_vuelos,vuelo5)
+Clases.arbol.eliminar(arbol_vuelos,vuelo9)
+Clases.arbol.eliminar(arbol_vuelos,vuelo1)
+Clases.arbol.eliminar(arbol_vuelos,vuelo6)
+Clases.arbol.eliminar(arbol_vuelos,vuelo7)
 
-Clases.arbol.postorden(arbol)
+Clases.arbol.postorden(arbol_vuelos)
 print("chadetumadre")
-Clases.arbol.preorden(arbol)
+Clases.arbol.preorden(arbol_vuelos)
 
-print("chadetumadre2")
-
-print(Clases.arbol.buscar(arbol,"1002"))
-
+print(Clases.arbol.buscar(arbol_vuelos,"1002"))
+"""
 
 
 
