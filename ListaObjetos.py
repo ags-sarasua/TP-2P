@@ -107,7 +107,7 @@ lista_vuelo.append(Nodo(vuelo9))
 lista_vuelo.append(Nodo(vuelo10))"""
 
 arbol_vuelos=Clases.arbol()
-arbol_vuelos.cargar_estructura("C:\\Users\\USER\\Documents\\GitHub\\arbol-vuelo.txt")
+arbol_vuelos.cargar_estructura("arbol-vuelo.txt")
 """
 with open("C:\\Users\\USER\\Documents\\GitHub\\arbol-vuelo.txt", "r") as archivo:
     lineas = archivo.readlines()
