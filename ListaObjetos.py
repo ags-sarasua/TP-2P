@@ -106,35 +106,58 @@ lista_vuelo.append(Nodo(vuelo8))
 lista_vuelo.append(Nodo(vuelo9))
 lista_vuelo.append(Nodo(vuelo10))"""
 
-arbol=Clases.arbol()
+arbol_vuelos=Clases.arbol()
+arbol_vuelos.cargar_estructura("arbol-vuelo.txt")
+"""
+with open("C:\\Users\\USER\\Documents\\GitHub\\arbol-vuelo.txt", "r") as archivo:
+    lineas = archivo.readlines()
 
-Clases.arbol.insertar(arbol,vuelo1)
-Clases.arbol.insertar(arbol,vuelo2)
-Clases.arbol.insertar(arbol,vuelo3)
-Clases.arbol.insertar(arbol,vuelo4)
-Clases.arbol.insertar(arbol,vuelo5)
-Clases.arbol.insertar(arbol,vuelo6)
-Clases.arbol.insertar(arbol,vuelo7)
-Clases.arbol.insertar(arbol,vuelo8)
-Clases.arbol.insertar(arbol,vuelo9)
-Clases.arbol.insertar(arbol,vuelo10)
+    for linea in lineas:
+        datos = linea.strip().split(",")
+
+        nro_vuelo = datos[0].split(":")[1].strip()
+        origen = datos[1].split(":")[1].strip()
+        destino = datos[2].split(":")[1].strip()
+        legajo_piloto = datos[3].split(":")[1].strip()
+        precio = datos[4].split(":")[1].strip()
+
+        # Crear un objeto con los datos del vuelo
+        vuelo = Clases.vuelo(nro_vuelo, origen, destino, legajo_piloto, precio)
+
+        # Insertar el vuelo en el árbol
+        arbol_vuelos.insertar(vuelo)
+"""
+
+"""
+
+Clases.arbol.insertar(arbol_vuelos,vuelo1)
+Clases.arbol.insertar(arbol_vuelos,vuelo2)
+Clases.arbol.insertar(arbol_vuelos,vuelo3)
+Clases.arbol.insertar(arbol_vuelos,vuelo4)
+Clases.arbol.insertar(arbol_vuelos,vuelo5)
+Clases.arbol.insertar(arbol_vuelos,vuelo6)
+Clases.arbol.insertar(arbol_vuelos,vuelo7)
+Clases.arbol.insertar(arbol_vuelos,vuelo8)
+Clases.arbol.insertar(arbol_vuelos,vuelo9)
+Clases.arbol.insertar(arbol_vuelos,vuelo10)
+"""
 
 #Clases.arbol.postorden(arbol)
+"""
+#Pruebas del arbol
 
-Clases.arbol.eliminar(arbol,vuelo5)
-Clases.arbol.eliminar(arbol,vuelo9)
-Clases.arbol.eliminar(arbol,vuelo1)
-Clases.arbol.eliminar(arbol,vuelo6)
-Clases.arbol.eliminar(arbol,vuelo7)
+Clases.arbol.eliminar(arbol_vuelos,vuelo5)
+Clases.arbol.eliminar(arbol_vuelos,vuelo9)
+Clases.arbol.eliminar(arbol_vuelos,vuelo1)
+Clases.arbol.eliminar(arbol_vuelos,vuelo6)
+Clases.arbol.eliminar(arbol_vuelos,vuelo7)
 
-Clases.arbol.postorden(arbol)
+Clases.arbol.postorden(arbol_vuelos)
 print("chadetumadre")
-Clases.arbol.preorden(arbol)
+Clases.arbol.preorden(arbol_vuelos)
 
-print("chadetumadre2")
-
-print(Clases.arbol.buscar(arbol,"1002"))
-
+print(Clases.arbol.buscar(arbol_vuelos,"1002"))
+"""
 
 
 
