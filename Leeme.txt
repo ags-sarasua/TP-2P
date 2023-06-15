@@ -10,8 +10,8 @@ Updates:
 -Manejo de errores: al momento de abrir un archivo, si no puede realizarse la acción, se finaliza el programa.
 -Árboles: se implementó el arbolVuelo, el cual tiene dentro de sí todos los objetos de la clase Vuelo, organizados por su ID (nro_vuelo). Se eligió la clase vuelo para implementar el árbol porque no se 
 modifican tanto las instancias: es más común la búsqueda de un vuelo en particular para agregar un viaje.
--Colas: nueva funcionalidad para el mantenimiento de los aviones. Al llamarla, el avión más antiguo sale de la lista y pasa a ser último de la lista, con una nueva fecha de alta (el día de la fecha) 
--Objeto como atributo: la clase reserva pasa a tener, en lugar del DNI de la persona pasa a tener el objeto de esa persona.
+-Cola: nueva función para el mantenimiento de aviones. Al llamarla se le pide un avión a un usuario para que entre en mantenimiento y este es el primero en salir cuando se finalizó dicho mantenimiento.
+-Objeto como atributo: En los métodos agregar_pasajero y eliminar_pasajero se trabaja con un pasajero como objeto el cual relaciona la clase reserva con la clase vuelo. De esta forma se realiza una lista de pasajeros (cómo objetos) de un determinado vuelo.
 -Método eliminar: utiliza el método auxiliar eliminar_recursivo para buscar el nodo con el valor especificado en el árbol y eliminarlo.
 Si el nodo a eliminar tiene hijos, se realiza un reemplazo con el valor mínimo del subárbol derecho. El método obtener_minimo_valor se utiliza para encontrar el valor mínimo en el subárbol derecho.
 Observaciones:
