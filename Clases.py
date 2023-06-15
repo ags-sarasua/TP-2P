@@ -38,7 +38,7 @@ def validarFecha():
 
 #login recibe un usuario y una contraseña para chequear si está en el sistema. 
 def login(username, password):
-        with open("TP-2P\\Usuarios.txt", 'r', encoding='utf-8') as archivo:
+        with open("Usuarios.txt", 'r', encoding='utf-8') as archivo:
             listaUsuarios=[]
             passwordList=[]
             for linea in archivo:
@@ -55,7 +55,7 @@ def login(username, password):
 
 #registrarse escribe el archivo que tiene los usuarios y contraseñas para registrar un nuevo usuario
 def registrarse(username):
-    with open("TP-2P\\Usuarios.txt", 'r', encoding='utf-8') as archivo:
+    with open("Usuarios.txt", 'r', encoding='utf-8') as archivo:
         listaUsuarios=[]
         for linea in archivo:
             usu = linea.strip().split(".")[0]
@@ -63,12 +63,12 @@ def registrarse(username):
     while username in listaUsuarios or "." in username:
         username = input("Este nombre de usuario no es válido. Ingrese otro: ")
     password = input("Ingrese una contraseña: ")
-    with open("TP-2P\\Usuarios.txt", 'a', encoding='utf-8') as archivo:
+    with open("Usuarios.txt", 'a', encoding='utf-8') as archivo:
         archivo.write(f"\n{username}.{password}")
         return True
 
 def actualizar_contra(us, con):
-    with open("TP-2P\\Usuarios.txt", 'r', encoding='utf-8') as archivo:
+    with open("Usuarios.txt", 'r', encoding='utf-8') as archivo:
         listaUsuarios=[]
         passwordList=[]
         for linea in archivo:
@@ -77,7 +77,7 @@ def actualizar_contra(us, con):
             passwordList.append(contra)    
         index = listaUsuarios.index(us)
         passwordList[index] = con
-    with open("TP-2P\\Usuarios.txt", 'w', encoding='utf-8') as archivo:
+    with open("Usuarios.txt", 'w', encoding='utf-8') as archivo:
         for i, j in zip(listaUsuarios, passwordList):
             archivo.write(f"{i}.{j}\n")
         return True
@@ -89,6 +89,38 @@ def actualizar(lista, input_principal, atributo_principal, atributo_a_buscar, nu
             setattr(objeto,atributo_a_buscar,nuevo_input)
             return True
     return False
+
+
+
+
+class Cola:
+    def __init__(self):
+        self.lista=[]
+
+    def encolar(self, avion, lista_encolados):
+        self.lista.append(avion)
+        lista_encolados.append(avion)
+
+    def primerObjeto(self):
+        try:
+            return self.lista[0]
+        except:
+            raise ValueError("La cola está vacía")
+
+    def desencolar(self):
+        try:
+            return self.lista.pop(0)
+        except:
+            raise ValueError("La cola está vacía")
+
+    def es_vacia(self):
+       if len(self.lista)==0:
+        return True
+       else:
+           False
+
+    def __str__(self):
+        return ', '.join(str(avion) for avion in self.lista)
 
 #persona
 class persona: 
@@ -290,16 +322,29 @@ class avion:
         self.modelo=modelo
         self.fecha_alta=fecha_alta
         self.estado=estado
-    
+
+    def __eq__(self, other):
+        return self.nro_serie == other
+
     def __str__(self):
         return 'Nro de serie: {}, modelo: {}, fecha de alta: {}, estado: {}'. format(self.nro_serie,self.modelo,self.fecha_alta,self.estado)
     
-    #dado un número de serie, elimina la instancia de la lista de aviones
-    def eliminarAvion(nro_serie,matriz_aviones):
-        for i in matriz_aviones:
-            if i[0]==nro_serie:
-                matriz_aviones.pop(i)
-        return matriz_aviones
+    def eliminarAvion(input_principal,lista_avion):
+        flag=False
+        for avion in lista_avion:
+            if input_principal==avion.nro_serie:
+                lista_avion.remove(avion)
+                flag=True
+                return flag
+        if flag==False:
+            return flag      
+    def agregarAvion(input_principal, lista_avion):
+        for avion in lista_avion:
+            if input_principal == avion.nro_serie:
+                return False
+        lista_avion.append(input_principal)
+        return True
+  
     
     @staticmethod
     def nroSerie_repetido_empleado(nro_serie,lista_avion):    

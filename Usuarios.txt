@@ -27,5 +27,7 @@ ninfaaaa.123
 bruno.amor
 88.1234
 gola.12345
-admin.hola
+admin.admin
 probando.123
+diego.gauss
+txt.txt

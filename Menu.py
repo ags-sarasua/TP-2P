@@ -8,6 +8,8 @@ import matplotlib.pyplot as mlp
 #menu una vez ingresado 
 def menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,lista_reserva, us):
     menu = True
+    cola = Cola() 
+    lista_encolados = []  
     while menu == True:
         print('1)Persona  2)Empleado  3)Avion  4)Vuelo   5)Viaje   6)Reserva  7)Cambiar Contraseña   S)Salir')
         
@@ -110,7 +112,7 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,
 
 
                 if eleccion_metodo=='B' or eleccion_metodo =="b":
-                    menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,lista_reserva)
+                    menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,lista_reserva,us)
 #empleado     
         if eleccion_clase=='2':
             while True:
@@ -244,11 +246,11 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,
                         mlp.show()
                                             
                 if eleccion_metodo=='B' or eleccion_metodo =="b":
-                    menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,lista_reserva)
+                    menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,lista_reserva,us)
 #avion
         if eleccion_clase=='3':
             while True:
-                print('1)Visualizar lista   2)Agregar avion   3)Eliminar avion   4)Actualizar Avión   B)Volver')
+                print('1)Visualizar lista   2)Agregar avion   3)Eliminar avion   4)Actualizar Avión  5) Mantenimiento de avión  B)Volver')
                 eleccion_metodo=input('Ingrese su eleccion: ')
                 if eleccion_metodo=='1':
                     for avion in lista_avion:
@@ -275,17 +277,13 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,
                 
                 if eleccion_metodo=='3':
                     input_principal=input('Ingrese el nro de serie del avión que desea eliminar: ')
-                    flag=False
-                    for avion in lista_avion:
-                        if input_principal==avion.nro_serie:
-                            lista_avion.remove(avion)
-                            flag=True
-                            print('El avión con el nro de serie {} se ha eliminado correctamente'.format(input_principal))
-                    if flag==False:
+                    if Clases.avion.eliminarTrueFalse(input_principal,lista_avion):
+                        print('El avión con el nro de serie {} se ha eliminado correctamente'.format(input_principal))
+                    else:
                         print('El avión ingresado no se encuentra en la base de datos')                      
                 
                 if eleccion_metodo=='B' or eleccion_metodo =="b":
-                    menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,lista_reserva)
+                    menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,lista_reserva,us)
 
                 if eleccion_metodo=='4':
                     print('1)Nro serie   2)Modelo   3)Fecha alta  4)Estado')
@@ -321,6 +319,41 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,
 
                     else:
                         print("Ingrese una opción numérica válida y vuelva a intentarlo")
+
+
+                if eleccion_metodo == "5":
+                    seleccion=input("Seleccione 1 si quiere que un avión entre en mantemiento, seleccione 2 si quiere sacar un avión de mantemiento: ")
+                    while (seleccion != "1" and seleccion !="2"):
+                        seleccion=input("Ingrese una selección válida: ")
+                    if seleccion=="1": 
+                        avion=input("Ingrese el nro de serie del avión: ")
+                        objeto=None
+                        for nro_serie in lista_avion:
+                            if nro_serie==avion:
+                                objeto = nro_serie
+                                break    
+                        if Clases.avion.eliminarAvion(avion,lista_avion):
+                            if objeto is not None:
+                                cola.encolar(objeto, lista_encolados)
+                                print("El avión fue agregado a estado de mantenimiento con éxito")
+                                print(cola)
+                        else:
+                            print("No se encuentra el avión en la base de datos")
+                    if seleccion =="2":
+                        if cola.es_vacia():
+                            print("No hay aviones en mantenimiento")
+                            break
+                        else:
+                            Objeto=cola.primerObjeto()
+                            if Clases.avion.agregarAvion(Objeto,lista_avion):
+                                cola.desencolar()
+                                lista_encolados.pop(0)
+                                print("El avion ya fue sacado de mantenimiento")
+                                print(cola)
+                            else:
+                                print("No se encuentra el avión en la base de datos")
+
+
 #Vuelo
         if eleccion_clase=='4':
             while True:
@@ -389,7 +422,7 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,
                         print("No se puedo eliminar correctamente el vuelo indicado")                
 
                 if eleccion_metodo=='B' or eleccion_metodo =="b":
-                    menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,lista_reserva)           
+                    menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,lista_reserva,us)           
 #viaje
         if eleccion_clase=='5':
             while True:
@@ -457,7 +490,7 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,
                 
                 
                 if eleccion_metodo=='B' or eleccion_metodo =="b":
-                    menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,lista_reserva)
+                    menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,lista_reserva,us)
 #reserva              
         if eleccion_clase=='6':
             while True:
@@ -525,7 +558,7 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,
                         print("Ingrese alguna de las opciones numéricas y vuelva a intentarlo")
 
                 if eleccion_metodo=='B' or eleccion_metodo =="b":
-                    menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,lista_reserva)
+                    menu_clase(lista_persona,lista_empleado,lista_avion,lista_vuelo,lista_viaje,lista_reserva,us)
 #Actualizar contraseña
         if eleccion_clase=='7':
             verificar = False
