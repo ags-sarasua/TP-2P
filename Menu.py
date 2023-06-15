@@ -325,7 +325,7 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,
 #Vuelo
         if eleccion_clase=='4':
             while True:
-                print('1)Visualizar lista   2)Agregar vuelo   3)Actualizar Vuelo  4) Eliminar vuelo     B)Volver')
+                print('1)Visualizar lista   2)Agregar vuelo  3) Eliminar vuelo   B)Volver')
                 eleccion_metodo=input('Ingrese su eleccion: ')
                 if eleccion_metodo=='1':
                     arbol.preorden(arbol_vuelo)
@@ -345,43 +345,8 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,
                     lista_filtro[4]=Clases.vuelo.check_precio_vuelo(lista_filtro[4])
                     lista_filtro[3]=Clases.vuelo.check_piloto(lista_filtro[3], lista_empleado)
                     arbol_vuelo.insertar(Nodo(Clases.vuelo(lista_filtro[0], lista_filtro[1], lista_filtro[2],lista_filtro[3],lista_filtro[4])))
-                """
+                    
                 if eleccion_metodo=='3':
-                    print('1)Nro vuelo  2)Aeropuerto salida  3)Aeropuerto llegada    4)Legajo del piloto   5)Precio')
-                    print('\n \t Comentario')
-                    print('Nro vuelo: 4 digitos numericos \n')
-                    input_principal=input("ingrese el Nro de vuelo del vuelo a actualizar:    ")
-                    input_principal=Clases.vuelo.check_sintaxis_nro_vuelo(input_principal)
-                    eleccion_actualizar=input("Ingrese numero de atributo a actualizar:   ")
-                    nuevo_input=input("Ingrese el valor a actualizar:    ")
-
-                    if eleccion_actualizar in ['1','2','3','4','5']:
-                        if eleccion_actualizar=="1":
-                            nuevo_input=Clases.vuelo.check_sintaxis_nro_vuelo(nuevo_input)
-                            if arbol_vuelo.actualizar_le(input_principal,"nro_vuelo","nro_vuelo",nuevo_input) == False:
-                                print("El número de vuelo ingresado no corresponde al de un vuelo existente. La información no ha sido actualizada con exito.")
-                        if eleccion_actualizar=="2":
-                            if arbol_vuelo.actualizar_le(input_principal,"nro_vuelo","aeropuerto_salida",nuevo_input) == False:
-                                print("El número de vuelo ingresado no corresponde al de un vuelo existente. La información no ha sido actualizada con exito.")
-
-                        if eleccion_actualizar=="3":
-                            if arbol_vuelo.actualizar_le(input_principal,"nro_vuelo","aeropuerto_llegada",nuevo_input) == False:
-                                print("El número de vuelo ingresado no corresponde al de un vuelo existente. La información no ha sido actualizada con exito.")
-
-                        if eleccion_actualizar=="4":
-                            nuevo_input=Clases.vuelo.check_piloto(nuevo_input,lista_empleado) 
-                            if arbol_vuelo.actualizar_le(input_principal,"nro_vuelo","legajo_piloto",nuevo_input) == False:
-                                print("El número de vuelo ingresado no corresponde al de un vuelo existente. La información no ha sido actualizada con exito.")
-
-                        if eleccion_actualizar=="5":
-                            nuevo_input=Clases.vuelo.check_precio_vuelo(nuevo_input)
-                            if arbol_vuelo.actualizar_le(input_principal,"nro_vuelo","precio",nuevo_input)  == False:
-                                print("El número de vuelo ingresado no corresponde al de un vuelo existente. La información no ha sido actualizada con exito.")                
-
-                    else:
-                        print("Ingrese alguna de las opciones numéricas y vuelva a intentarlo")                
-                """
-                if eleccion_metodo=='4':
                     vuelo_eliminar=input("Ingrese el número de vuelo que quiere eliminar: ")
                     if arbol_vuelo.eliminar(vuelo_eliminar):
                         print("Se eliminó correctamente el vuelo indicado")
@@ -389,7 +354,7 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,
                         print("No se puedo eliminar correctamente el vuelo indicado")                
 
                 if eleccion_metodo=='B' or eleccion_metodo =="b":
-                    menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,lista_reserva)           
+                    menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,lista_reserva, us)           
 #viaje
         if eleccion_clase=='5':
             while True:
@@ -554,12 +519,12 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,
 def menu():
     inicio = True
     while inicio == True:
-        lista_empleado=json_a_normal(Clases.empleado,r'Jsons\empleado.json')
-        lista_avion=json_a_normal(Clases.avion,r'Jsons\avion.json') 
-        lista_persona=json_a_enlazada(Clases.persona,r'Jsons\persona.json','fecha_de_nacimiento')
-        arbol_vuelo=json_a_enlazada(Clases.vuelo,r'Jsons\vuelo.json') 
-        lista_viaje=json_a_enlazada(Clases.viaje,r'Jsons\viaje.json','fecha','pasajeros',Clases.persona,'fecha_de_nacimiento')
-        lista_reserva=json_a_enlazada(Clases.reserva,r'Jsons\reserva.json')
+        lista_empleado=json_a_normal(Clases.empleado,r'Jsons\\empleado.json')
+        lista_avion=json_a_normal(Clases.avion,r'Jsons\\avion.json') 
+        lista_persona=json_a_enlazada(Clases.persona,r'Jsons\\persona.json','fecha_de_nacimiento')
+        arbol_vuelo=json_a_enlazada(Clases.vuelo,r'Jsons\\vuelo.json') 
+        lista_viaje=json_a_enlazada(Clases.viaje,r'Jsons\\viaje.json','fecha','pasajeros',Clases.persona,'fecha_de_nacimiento')
+        lista_reserva=json_a_enlazada(Clases.reserva,r'Jsons\\reserva.json')
         print('')
         print(Fore.RED + "\033[1mBienvenido a aerolineas Mamba\033[0m")
 
@@ -589,7 +554,7 @@ def menu():
             try:
                 if login(us, con):
                     print("¡Hola {}!".format(us))
-                    menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,lista_reserva, us)
+                    menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelos,lista_viaje,lista_reserva, us)
                     inicio = False
             except FileNotFoundError:
                 print("No se pudo ejecutar")

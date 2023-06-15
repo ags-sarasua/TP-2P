@@ -38,7 +38,7 @@ def validarFecha():
 
 #login recibe un usuario y una contraseña para chequear si está en el sistema. 
 def login(username, password):
-        with open("C:\\Users\\Ignacio\\OneDrive\\Documents\\GitHub\\TP-2P\\Usuarios.txt", 'r', encoding='utf-8') as archivo:
+        with open("Usuarios.txt", 'r', encoding='utf-8') as archivo:
             listaUsuarios=[]
             passwordList=[]
             for linea in archivo:
@@ -55,7 +55,7 @@ def login(username, password):
 
 #registrarse escribe el archivo que tiene los usuarios y contraseñas para registrar un nuevo usuario
 def registrarse(username):
-    with open("TP-2P\\Usuarios.txt", 'r', encoding='utf-8') as archivo:
+    with open("Usuarios.txt", 'r', encoding='utf-8') as archivo:
         listaUsuarios=[]
         for linea in archivo:
             usu = linea.strip().split(".")[0]
@@ -63,12 +63,12 @@ def registrarse(username):
     while username in listaUsuarios or "." in username:
         username = input("Este nombre de usuario no es válido. Ingrese otro: ")
     password = input("Ingrese una contraseña: ")
-    with open("TP-2P\\Usuarios.txt", 'a', encoding='utf-8') as archivo:
+    with open("Usuarios.txt", 'a', encoding='utf-8') as archivo:
         archivo.write(f"\n{username}.{password}")
         return True
 
 def actualizar_contra(us, con):
-    with open("TP-2P\\Usuarios.txt", 'r', encoding='utf-8') as archivo:
+    with open("Usuarios.txt", 'r', encoding='utf-8') as archivo:
         listaUsuarios=[]
         passwordList=[]
         for linea in archivo:
@@ -77,7 +77,7 @@ def actualizar_contra(us, con):
             passwordList.append(contra)    
         index = listaUsuarios.index(us)
         passwordList[index] = con
-    with open("TP-2P\\Usuarios.txt", 'w', encoding='utf-8') as archivo:
+    with open("Usuarios.txt", 'w', encoding='utf-8') as archivo:
         for i, j in zip(listaUsuarios, passwordList):
             archivo.write(f"{i}.{j}\n")
         return True
@@ -346,7 +346,7 @@ class vuelo:
         return self.nro_vuelo == other.nro_vuelo """
 
     def __str__(self):
-        return f"Nro de vuelo: {self.nro_vuelo}, Aeropuerto orígen: {self.aeropuerto_salida}, Aeropuerto destino: {self.aeropuerto_llegada}, Legajo Piloto: {self.legajo_piloto}, Precio: {self.precio}"
+        return f"Nro de vuelo: {self.nro_vuelo}, Aeropuerto origen: {self.aeropuerto_salida}, Aeropuerto destino: {self.aeropuerto_llegada}, Legajo Piloto: {self.legajo_piloto}, Precio: {self.precio}"
     #Verifica que el vuelo sea un número de 4 dígitos
     @staticmethod
     def check_sintaxis_nro_vuelo(nro_vuelo):
@@ -630,7 +630,7 @@ class arbol():
     
     def preorden_recursivo(self, nodo_actual):
         if nodo_actual is not None:
-            print(nodo_actual.valor, end="/n")
+            print(nodo_actual.valor, end="\n")
             #Primero buscamos siempre a la izquierda
             self.preorden_recursivo(nodo_actual.izquierda)
             #Luego de ir todo a la izquierda, vamos a la derecha
@@ -644,7 +644,25 @@ class arbol():
             self.postorden_recusivo(nodo_actual.izquierda)
             self.postorden_recusivo(nodo_actual.derecha)
             print(nodo_actual.valor, end=" ")
-    
+
+    def cargar_estructura(self, nombre_archivo):
+        # Carga la estructura del árbol desde un archivo de texto
+        with open(nombre_archivo, "r") as archivo:
+            lineas = archivo.readlines()
+
+            for linea in lineas:
+                datos = linea.strip().split(",")
+
+                nro_vuelo = datos[0].split(":")[1].strip()
+                origen = datos[1].split(":")[1].strip()
+                destino = datos[2].split(":")[1].strip()
+                legajo_piloto = datos[3].split(":")[1].strip()
+                precio = datos[4].split(":")[1].strip()
+
+                vuelo_a_insertar = vuelo(nro_vuelo, origen, destino, legajo_piloto, precio)
+
+                self.insertar(vuelo_a_insertar)
+
     def guardar_estructura(self, nombre_archivo):
         #guarda el árbol en un archivo de texto
         with open(nombre_archivo, "w") as archivo:
@@ -664,15 +682,18 @@ class arbol():
 
 
     def eliminar(self, valor):
-            self.raiz = self.eliminar_recursivo(valor, self.raiz)
-
+        if self.buscar(valor) is None:
+            return False
+        self.raiz = self.eliminar_recursivo(valor, self.raiz)
+        return True
+        
     def eliminar_recursivo(self, valor, nodo_actual):
         if nodo_actual is None:
             return nodo_actual
         
-        if valor.nro_vuelo< nodo_actual.valor.nro_vuelo:
+        if valor < nodo_actual.valor.nro_vuelo:
             nodo_actual.izquierda = self.eliminar_recursivo(valor, nodo_actual.izquierda)
-        elif valor.nro_vuelo > nodo_actual.valor.nro_vuelo:
+        elif valor > nodo_actual.valor.nro_vuelo:
             nodo_actual.derecha = self.eliminar_recursivo(valor, nodo_actual.derecha)
         else:
             if nodo_actual.izquierda is None:
@@ -681,14 +702,15 @@ class arbol():
                 return nodo_actual.izquierda
             else:
                 nodo_actual.valor = self.obtener_minimo_valor(nodo_actual.derecha)
-                nodo_actual.derecha = self.eliminar_recursivo(nodo_actual.valor, nodo_actual.derecha)
+                nodo_actual.derecha = self.eliminar_recursivo(nodo_actual.valor.nro_vuelo, nodo_actual.derecha)
         
-        return nodo_actual
+        return nodo_actual    
 
     def obtener_minimo_valor(self, nodo_actual):
-        while nodo_actual.izquierda is not None:
-            nodo_actual = nodo_actual.izquierda
-        return nodo_actual.valor
+            while nodo_actual.izquierda is not None:
+                nodo_actual = nodo_actual.izquierda
+            return nodo_actual.valor
+    
 
 
 
