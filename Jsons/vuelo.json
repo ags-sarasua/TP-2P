@@ -1,0 +1,72 @@
+[
+  {
+    "nro_vuelo": "1001",
+    "aeropuerto_salida": "JFK",
+    "aeropuerto_llegada": "LAX",
+    "legajo_piloto": "5678",
+    "precio": "1500"
+  },
+  {
+    "nro_vuelo": "1002",
+    "aeropuerto_salida": "SFO",
+    "aeropuerto_llegada": "ORD",
+    "legajo_piloto": "2345",
+    "precio": "1800"
+  },
+  {
+    "nro_vuelo": "1003",
+    "aeropuerto_salida": "LHR",
+    "aeropuerto_llegada": "CDG",
+    "legajo_piloto": "5678",
+    "precio": "2200"
+  },
+  {
+    "nro_vuelo": "1004",
+    "aeropuerto_salida": "HND",
+    "aeropuerto_llegada": "ICN",
+    "legajo_piloto": "5678",
+    "precio": "1900"
+  },
+  {
+    "nro_vuelo": "1005",
+    "aeropuerto_salida": "PEK",
+    "aeropuerto_llegada": "SYD",
+    "legajo_piloto": "2345",
+    "precio": "2000"
+  },
+  {
+    "nro_vuelo": "1006",
+    "aeropuerto_salida": "DXB",
+    "aeropuerto_llegada": "LHR",
+    "legajo_piloto": "1235",
+    "precio": "2300"
+  },
+  {
+    "nro_vuelo": "1007",
+    "aeropuerto_salida": "ORD",
+    "aeropuerto_llegada": "SFO",
+    "legajo_piloto": "2345",
+    "precio": "2500"
+  },
+  {
+    "nro_vuelo": "1008",
+    "aeropuerto_salida": "CDG",
+    "aeropuerto_llegada": "LHR",
+    "legajo_piloto": "1235",
+    "precio": "2700"
+  },
+  {
+    "nro_vuelo": "1009",
+    "aeropuerto_salida": "ICN",
+    "aeropuerto_llegada": "HND",
+    "legajo_piloto": "1235",
+    "precio": "1800"
+  },
+  {
+    "nro_vuelo": "1010",
+    "aeropuerto_salida": "EZE",
+    "aeropuerto_llegada": "BDX",
+    "legajo_piloto": "1235",
+    "precio": "3000"
+  }
+]
