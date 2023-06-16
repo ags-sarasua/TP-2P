@@ -1,0 +1,9 @@
+Nro de vuelo: 1002, Aeropuerto origen: SFO, Aeropuerto destino: ORD, Legajo Piloto: 2345, Precio: 1800
+Nro de vuelo: 1003, Aeropuerto origen: LHR, Aeropuerto destino: CDG, Legajo Piloto: 5678, Precio: 2200
+Nro de vuelo: 1004, Aeropuerto origen: HND, Aeropuerto destino: ICN, Legajo Piloto: 5678, Precio: 1900
+Nro de vuelo: 1005, Aeropuerto origen: PEK, Aeropuerto destino: SYD, Legajo Piloto: 2345, Precio: 2000
+Nro de vuelo: 1006, Aeropuerto origen: DXB, Aeropuerto destino: LHR, Legajo Piloto: 1235, Precio: 2300
+Nro de vuelo: 1007, Aeropuerto origen: ORD, Aeropuerto destino: SFO, Legajo Piloto: 2345, Precio: 2500
+Nro de vuelo: 1008, Aeropuerto origen: CDG, Aeropuerto destino: LHR, Legajo Piloto: 1235, Precio: 2700
+Nro de vuelo: 1009, Aeropuerto origen: ICN, Aeropuerto destino: HND, Legajo Piloto: 1235, Precio: 1800
+Nro de vuelo: 1010, Aeropuerto origen: EZE, Aeropuerto destino: BDX, Legajo Piloto: 1235, Precio: 3000
