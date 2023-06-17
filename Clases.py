@@ -1,126 +1,7 @@
 import datetime
-from listasenlazadas import *
+from Codigo_estructuras.Listas_enlazadas import *
+from Funciones_extra import *
 
-
-#validarNum valida que un número ingresado por el usuario sea un número entre cierto rango pedido
-def validarNum(tipoDato: str, min: int, max: int) -> int:
-    ingresado = min - 1
-    booleana = False
-    while(booleana == False):
-        try:
-            ingresado = int(input("Ingrese "+ tipoDato +": "))
-            if(ingresado < min or ingresado > max):
-                print("Error, el número debe estar entre {} y {}".format(min, max))
-            else:
-                return ingresado    
-        except:
-            print("Error, tiene que ingresar un número. intente de nuevo")       
-
-#validarFecha recibe año, mes y día para convertirlo en un dato del tipo datetime 
-def validarFecha():
-    meses_31dias = [1, 3, 5, 7, 8, 10, 12]
-    meses_30dias = [4, 6, 9, 11]
-
-    año = validarNum("año", 1900, 2100)
-    mes = validarNum("mes", 1, 12)
-
-    # Pedir el día (acotado según el mes)
-    if mes in meses_31dias:
-        dia = validarNum("dia", 1, 31)
-    elif mes in meses_30dias:
-        dia = validarNum("dia", 1, 30)
-    elif mes == 2:
-        if (año % 4 == 0 and año % 100 != 0) or (año % 400 == 0):
-            dia = validarNum("dia", 1, 29)
-        else:
-            dia = validarNum("dia", 1, 28)
-    return(datetime.date(año, mes, dia))
-
-#login recibe un usuario y una contraseña para chequear si está en el sistema. 
-def login(username, password):
-        with open("Usuarios.txt", 'r', encoding='utf-8') as archivo:
-            listaUsuarios=[]
-            passwordList=[]
-            for linea in archivo:
-                usu, contra = linea.strip().split(".")
-                listaUsuarios.append(usu)
-                passwordList.append(contra)
-            while username not in listaUsuarios:
-                username = input("El usuario ingresado no existe. Intente de nuevo: ")
-            index = listaUsuarios.index(username)
-            while passwordList[index] != password:
-                password = input("Error, contraseña incorrecta. Ingresela nuevamente: ")
-            return True
-
-
-#registrarse escribe el archivo que tiene los usuarios y contraseñas para registrar un nuevo usuario
-def registrarse(username):
-    with open("Usuarios.txt", 'r', encoding='utf-8') as archivo:
-        listaUsuarios=[]
-        for linea in archivo:
-            usu = linea.strip().split(".")[0]
-            listaUsuarios.append(usu)
-    while username in listaUsuarios or "." in username:
-        username = input("Este nombre de usuario no es válido. Ingrese otro: ")
-    password = input("Ingrese una contraseña: ")
-    with open("Usuarios.txt", 'a', encoding='utf-8') as archivo:
-        archivo.write(f"\n{username}.{password}")
-        return True
-
-def actualizar_contra(us, con):
-    with open("Usuarios.txt", 'r', encoding='utf-8') as archivo:
-        listaUsuarios=[]
-        passwordList=[]
-        for linea in archivo:
-            usu, contra = linea.strip().split(".")
-            listaUsuarios.append(usu)
-            passwordList.append(contra)    
-        index = listaUsuarios.index(us)
-        passwordList[index] = con
-    with open("Usuarios.txt", 'w', encoding='utf-8') as archivo:
-        for i, j in zip(listaUsuarios, passwordList):
-            archivo.write(f"{i}.{j}\n")
-        return True
-
-#actualizar para las listas fijas
-def actualizar(lista, input_principal, atributo_principal, atributo_a_buscar, nuevo_input):
-    for objeto in lista:
-        if getattr(objeto,atributo_principal)==input_principal:
-            setattr(objeto,atributo_a_buscar,nuevo_input)
-            return True
-    return False
-
-
-
-
-class Cola:
-    def __init__(self):
-        self.lista=[]
-
-    def encolar(self, avion, lista_encolados):
-        self.lista.append(avion)
-        lista_encolados.append(avion)
-
-    def primerObjeto(self):
-        try:
-            return self.lista[0]
-        except:
-            raise ValueError("La cola está vacía")
-
-    def desencolar(self):
-        try:
-            return self.lista.pop(0)
-        except:
-            raise ValueError("La cola está vacía")
-
-    def es_vacia(self):
-       if len(self.lista)==0:
-        return True
-       else:
-           False
-
-    def __str__(self):
-        return ', '.join(str(avion) for avion in self.lista)
 
 #persona
 class persona: 
@@ -228,7 +109,7 @@ class persona:
     
 #empleado
 class empleado(persona):
-    def __init__(self,DNI,nombre,apellido,sexo,fecha_de_nacimiento,pais,legajo,sector):
+    def __init__(self,DNI,nombre,apellido,sexo,fecha_de_nacimiento,pais,legajo,sector,mail=None,telefono=None):
         super().__init__(DNI,nombre,apellido,sexo,fecha_de_nacimiento,pais,None,None)
         self.legajo=legajo
         self.sector=sector
@@ -330,29 +211,21 @@ class avion:
         return 'Nro de serie: {}, modelo: {}, fecha de alta: {}, estado: {}'. format(self.nro_serie,self.modelo,self.fecha_alta,self.estado)
     
     def eliminarAvion(input_principal,lista_avion):
-        flag=False
+        Booleano=False
         for avion in lista_avion:
             if input_principal==avion.nro_serie:
                 lista_avion.remove(avion)
-                flag=True
-                return flag
-        if flag==False:
-            return flag      
-    def agregarAvion(input_principal, lista_avion):
-        for avion in lista_avion:
-            if input_principal == avion.nro_serie:
-                return False
-        lista_avion.append(input_principal)
-        return True
-  
+                Booleano=True
+                return Booleano
+        return Booleano
     
     @staticmethod
-    def nroSerie_repetido_empleado(nro_serie,lista_avion):    
+    def nro_serie_repetido(nro_serie,lista_avion):    
         for objeto in lista_avion:
             if objeto.nro_serie==nro_serie:
                 nro_serie=input('Ingrese un nro de serie nuevo:  ')
                 nro_serie=avion.check_sintaxis_nro_serie(nro_serie)
-                nro_serie=avion.nroSerie_repetido_empleado(nro_serie,lista_avion)
+                nro_serie=avion.nro_serie_repetido(nro_serie,lista_avion)
                 return nro_serie
         return nro_serie
             
@@ -429,13 +302,13 @@ class vuelo:
 #viaje   
 class viaje:
     capacidad=5
-    def __init__(self,nro_viaje,nro_vuelo,nro_serie,fecha):
+    def __init__(self,nro_viaje,nro_vuelo,nro_serie,fecha,pasajeros=[],contador_pasajeros=5):
         self.nro_viaje=nro_viaje
         self.nro_vuelo=nro_vuelo
         self.nro_serie=nro_serie
         self.fecha=fecha
-        self.pasajeros=[]
-        self.contador_pasajeros = 0
+        self.pasajeros=pasajeros
+        self.contador_pasajeros = contador_pasajeros
 
     def str_pasajero(self):
         ret = "["
@@ -531,10 +404,10 @@ class viaje:
 
 #reserva
 class reserva: 
-    def __init__(self,nro_reserva,DNI_cliente,legajo_empleado,nro_viaje,monto):
+    def __init__(self,nro_reserva,DNI_cliente,empleado,nro_viaje,monto):
         self.nro_reserva=nro_reserva
         self.DNI_cliente=DNI_cliente
-        self.empleado=legajo_empleado
+        self.empleado=empleado
         self.nro_viaje=nro_viaje
         self.monto=monto
 
@@ -592,165 +465,5 @@ class reserva:
                 return precio
             else: 
                 precio=input('Monto incorrecto, ingrese nuevamente su monto:    ')
-
-class NodoarbolVuelo:
-    #constructor
-    def __init__(self,dato=None):
-        self.dato=dato
-        self.derecha=None
-        self.izquierda=None
-
-    def agregarnodos(raiz,nodo):
-        if raiz.dato<nodo.dato:
-            if raiz.derecha==None:
-                raiz.derecha=nodo
-            else:
-                 raiz.derecha.agregarnodos(nodo)
-        elif raiz.dato>nodo.dato:
-            if raiz.izquierda==None:
-                raiz.izquierda=nodo
-            else:
-                raiz.izquierda.agregarnodos(nodo)
-
-
-
-
-class Nodo_arbol:
-
-    #constructor
-    def __init__(self,valor=None):
-        self.valor=valor
-        self.derecha=None
-        self.izquierda=None
-
-
-class arbol():
-
-
-    def __init__(self,nodo=None):
-        self.raiz=nodo
-
-    def insertar(self,valor):
-        if self.raiz is None:
-            self.raiz = Nodo_arbol(valor)
-        else:
-            self.insertar_ordenado(valor,self.raiz)
-    
-    def insertar_ordenado(self,valor,nodo_actual):
-        if valor.nro_vuelo < nodo_actual.valor.nro_vuelo:
-            if nodo_actual.izquierda is None:
-                nodo_actual.izquierda = Nodo_arbol(valor)
-            else:
-                self.insertar_ordenado(valor, nodo_actual.izquierda)
-        else:
-            if nodo_actual.derecha is None:
-                nodo_actual.derecha = Nodo_arbol(valor)
-            else:
-                self.insertar_ordenado(valor, nodo_actual.derecha)
-    
-    def buscar(self, dato):
-        return self.buscar_recursivo(dato, self.raiz)
-    
-    def buscar_recursivo(self, dato, nodo_actual):
-        if nodo_actual is None or nodo_actual.valor.nro_vuelo == dato:
-            return nodo_actual
-        
-        if dato < nodo_actual.valor.nro_vuelo:
-            return self.buscar_recursivo(dato, nodo_actual.izquierda)
-        else:
-            return self.buscar_recursivo(dato, nodo_actual.derecha)
-
-    def preorden(self):
-        self.preorden_recursivo(self.raiz)
-    
-    def preorden_recursivo(self, nodo_actual):
-        if nodo_actual is not None:
-            print(nodo_actual.valor, end="\n")
-            #Primero buscamos siempre a la izquierda
-            self.preorden_recursivo(nodo_actual.izquierda)
-            #Luego de ir todo a la izquierda, vamos a la derecha
-            self.preorden_recursivo(nodo_actual.derecha)
-
-    def postorden(self):
-        self.postorden_recusivo(self.raiz)
-    
-    def postorden_recusivo(self, nodo_actual):
-        if nodo_actual is not None:
-            self.postorden_recusivo(nodo_actual.izquierda)
-            self.postorden_recusivo(nodo_actual.derecha)
-            print(nodo_actual.valor, end=" ")
-
-    def cargar_estructura(self, nombre_archivo):
-        # Carga la estructura del árbol desde un archivo de texto
-        with open(nombre_archivo, "r") as archivo:
-            lineas = archivo.readlines()
-
-            for linea in lineas:
-                datos = linea.strip().split(",")
-
-                nro_vuelo = datos[0].split(":")[1].strip()
-                origen = datos[1].split(":")[1].strip()
-                destino = datos[2].split(":")[1].strip()
-                legajo_piloto = datos[3].split(":")[1].strip()
-                precio = datos[4].split(":")[1].strip()
-
-                vuelo_a_insertar = vuelo(nro_vuelo, origen, destino, legajo_piloto, precio)
-
-                self.insertar(vuelo_a_insertar)
-
-    def guardar_estructura(self, nombre_archivo):
-        #guarda el árbol en un archivo de texto
-        with open(nombre_archivo, "w") as archivo:
-            self.guardar_estructura_recursivo(self.raiz, archivo)
-    
-    def guardar_estructura_recursivo(self, nodo, archivo):
-        #Método auxiliar para guardar la estructura el árbol en un archivo
-        if nodo is None:
-            return
-        
-        #Guardar la información del nodo en el archivo
-        archivo.write(f'{nodo.valor}\n')
-
-        #Llamada recursiva a los nodos izquierda y derecha
-        self.guardar_estructura_recursivo(nodo.izquierda, archivo)
-        self.guardar_estructura_recursivo(nodo.derecha, archivo)
-
-
-    def eliminar(self, valor):
-        if self.buscar(valor) is None:
-            return False
-        self.raiz = self.eliminar_recursivo(valor, self.raiz)
-        return True
-        
-    def eliminar_recursivo(self, valor, nodo_actual):
-        if nodo_actual is None:
-            return nodo_actual
-        
-        if valor < nodo_actual.valor.nro_vuelo:
-            nodo_actual.izquierda = self.eliminar_recursivo(valor, nodo_actual.izquierda)
-        elif valor > nodo_actual.valor.nro_vuelo:
-            nodo_actual.derecha = self.eliminar_recursivo(valor, nodo_actual.derecha)
-        else:
-            if nodo_actual.izquierda is None:
-                return nodo_actual.derecha
-            elif nodo_actual.derecha is None:
-                return nodo_actual.izquierda
-            else:
-                nodo_actual.valor = self.obtener_minimo_valor(nodo_actual.derecha)
-                nodo_actual.derecha = self.eliminar_recursivo(nodo_actual.valor.nro_vuelo, nodo_actual.derecha)
-        
-        return nodo_actual    
-
-    def obtener_minimo_valor(self, nodo_actual):
-            while nodo_actual.izquierda is not None:
-                nodo_actual = nodo_actual.izquierda
-            return nodo_actual.valor
-    
-
-
-
-
-
-
 
 

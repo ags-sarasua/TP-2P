@@ -1,7 +1,8 @@
 import Clases
 import datetime
-from listasenlazadas import *
-import json
+from Codigo_estructuras.Listas_enlazadas import *
+
+
 #Este archivo tiene instancias de objetos por defecto
 
 lista_persona=Lista()
@@ -106,8 +107,8 @@ lista_vuelo.append(Nodo(vuelo8))
 lista_vuelo.append(Nodo(vuelo9))
 lista_vuelo.append(Nodo(vuelo10))"""
 
-arbol_vuelos=Clases.arbol()
-arbol_vuelos.cargar_estructura("arbol-vuelo.txt")
+#arbol_vuelos=Clases.arbol()
+#arbol_vuelos.cargar_estructura("arbol-vuelo.txt")
 """
 with open("C:\\Users\\USER\\Documents\\GitHub\\arbol-vuelo.txt", "r") as archivo:
     lineas = archivo.readlines()

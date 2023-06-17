@@ -1,8 +1,9 @@
-import Clases
+
 import datetime
-from listasenlazadas import *
+from Codigo_estructuras.Listas_enlazadas import *
 import json
-from ListaObjetos import *
+from Objetos.ListaObjetos import *
+from Codigo_estructuras.Codigo_Cola import*
 
 def normal_a_jason(lista_clase, nombre_archivo, atributo_fecha=None):
     lista_diccionario=[]
@@ -30,6 +31,14 @@ def json_a_normal(clase,nombre_archivo,atributo_fecha=None):
             objeto[atributo_fecha]= datetime.date.fromisoformat(fecha)
         lista_clase.append(clase(**objeto))
     return lista_clase
+
+def json_a_cola(clase,nombre_archivo):
+    cola_clase=Cola()
+    with open(nombre_archivo, 'r',encoding="utf-8") as archivo:
+        data = json.load(archivo)
+    for objeto in data:
+        cola_clase.encolar(clase(**objeto))
+    return cola_clase
 
 #json_a_normal(Clases.empleado,r'Jsons\empleado.json')
 #json_a_normal(Clases.avion,r'Jsons\avion.json') 
