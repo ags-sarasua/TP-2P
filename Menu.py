@@ -1,6 +1,6 @@
 from Codigo_estructuras.Listas_enlazadas import *
 from Clases import *
-from Objetos.ListaObjetos import *
+from Objetos_y_arbol.ListaObjetos import *
 from Manejo_de_datos.Funciones_para_json import * 
 
 from Codigo_estructuras.Codigo_Cola import *
@@ -213,10 +213,10 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,
             list(cola_mantenimiento)
             normal_a_jason(cola_mantenimiento,r'Jsons\cola_mantenimiento.json')
             lista_persona.enlazada_a_jason(r'Jsons\persona.json',atributo_fecha='fecha_de_nacimiento')
-            arbol_vuelo.enlazada_a_jason(r'Jsons\vuelo.json')
             lista_viaje.enlazada_a_jason(r'Jsons\viaje.json',atributo_fecha='fecha',atributo_con_objeto='pasajeros',atributo_fecha_nested='fecha_de_nacimiento')
             lista_reserva.enlazada_a_jason(r'Jsons\reserva.json')
-            #arbol_vuelo.guardar_estructura("arbol-vuelo.txt")
+            
+            arbol_vuelo.guardar_estructura('Objetos_y_arbol\\arbol-vuelo.txt')
             
             menu = False
 
@@ -228,7 +228,8 @@ def menu():
         lista_empleado=json_a_normal(Clases.empleado,r'Jsons\\empleado.json')
         lista_avion=json_a_normal(Clases.avion,r'Jsons\\avion.json') 
         lista_persona=json_a_enlazada(Clases.persona,r'Jsons\\persona.json','fecha_de_nacimiento')
-        arbol_vuelo=json_a_enlazada(Clases.vuelo,r'Jsons\\vuelo.json') 
+        arbol_vuelo=arbol()
+        arbol_vuelo.cargar_estructura('Objetos_y_arbol\\arbol-vuelo.txt')
         lista_viaje=json_a_enlazada(Clases.viaje,r'Jsons\\viaje.json','fecha','pasajeros',Clases.persona,'fecha_de_nacimiento')
         lista_reserva=json_a_enlazada(Clases.reserva,r'Jsons\\reserva.json')
         cola_mantenimiento=json_a_cola(Clases.avion,r'Jsons\\cola_mantenimiento.json')

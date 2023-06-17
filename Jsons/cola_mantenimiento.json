@@ -1,17 +1,5 @@
 [
   {
-    "nro_serie": "1234567890",
-    "modelo": "Boeing 747",
-    "fecha_alta": "2022-01-01",
-    "estado": "Fuera de servicio"
-  },
-  {
-    "nro_serie": "2345678901",
-    "modelo": "Airbus A320",
-    "fecha_alta": "2020-06-15",
-    "estado": "En servicio"
-  },
-  {
     "nro_serie": "3456789012",
     "modelo": "Boeing 787",
     "fecha_alta": "2021-09-30",

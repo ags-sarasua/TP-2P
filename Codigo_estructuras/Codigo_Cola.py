@@ -43,7 +43,9 @@ def menu_cola_avion(lista_avion,cola_mantenimiento):
         if Booleano!=True:
             print("No se encuentra el avión en la base de datos")
     if seleccion =="2":
+        print(cola_mantenimiento)
         cola_mantenimiento.desencolar()
+        print(cola_mantenimiento)
     return None
             
             

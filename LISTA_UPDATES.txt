@@ -2,16 +2,28 @@ Acá van los cambios que hicimos
 
 Updates:
 -Usuario: un usuario puede cambiar su contraseña, modificando con ello al archivo Usuarios.txt.
+
 -Manejo de archivos: todos los objetos pasaron a respaldarse en su respectivo archivo, de formato JSON.
+
 -Base de datos: los datos de las ejecuciones se guardan en sus repectivos archivos json. Las funciones GENERICAS se encuentran en 
         Funciones_para_json.py y en listasenlazadas.py. Se utilizo recursividad, listas enlazadas, diccionarios y manejo de archivos.
         Nuestra mayor dificultad transformar objetos adentro de objetos, junto con la limitacion de datos que acepta json. 
+
 -Nuevo orden de menú: cada opción elegida en el menú principal llama a una función destinada a esa sección. 
+
 -Manejo de errores: al momento de abrir un archivo, si no puede realizarse la acción, se finaliza el programa.
+
 -Árboles: se implementó el arbolVuelo, el cual tiene dentro de sí todos los objetos de la clase Vuelo, organizados por su ID (nro_vuelo). Se eligió la clase vuelo para implementar el árbol porque no se 
 modifican tanto las instancias: es más común la búsqueda de un vuelo en particular para agregar un viaje.
+
 -Cola: nueva función para el mantenimiento de aviones. Al llamarla se le pide un avión a un usuario para que entre en mantenimiento y este es el primero en salir cuando se finalizó dicho mantenimiento.
+
 -Objeto como atributo: En los métodos agregar_pasajero y eliminar_pasajero se trabaja con un pasajero como objeto el cual relaciona la clase reserva con la clase vuelo. De esta forma se realiza una lista de pasajeros (cómo objetos) de un determinado vuelo.
+
 -Método eliminar: utiliza el método auxiliar eliminar_recursivo para buscar el nodo con el valor especificado en el árbol y eliminarlo.
+
 Si el nodo a eliminar tiene hijos, se realiza un reemplazo con el valor mínimo del subárbol derecho. El método obtener_minimo_valor se utiliza para encontrar el valor mínimo en el subárbol derecho.
+
 Observaciones:
+- A veces al finalizar la corrida aparece un error con format.isoformat, la verdad es que lo analizamos y es un error que a veces aparece y
+  y a veces no, no sabemos solucionarlo. 
