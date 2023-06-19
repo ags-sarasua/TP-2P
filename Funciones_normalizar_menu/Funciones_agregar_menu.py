@@ -47,12 +47,12 @@ def menu_agregar_persona(lista_persona):
     return lista_filtro
 
 def menu_agregar_empelado(lista_empleado):
-    print('1)DNI   2)Nombre  3)Apellido  4)Sexo  5)Fecha de nacimiento   6)Pais    7)Legajo    8)Sector')
+    print('1)DNI   2)Nombre  3)Apellido  4)Sexo  5)Fecha de nacimiento   6)Pais    7)Legajo    8)Sector   9)Us  10)Contreseña')
     print('\n \t Comentario')
     print('DNI: 8 digitos numericos \nSexo: Masculino, Femenino, Otro \nPais: en mayuscula y en ingles  \nLegajo: 4 numeros \nSector: Piloto,Tecnico,Administrativo \n')
     lista_filtro=[]
-    listaMenu = ['DNI', 'Nombre','Apellido', 'Sexo', 'Fecha de nacimiento', 'Pais','Legajo','Sector']
-    for i in range(8):
+    listaMenu = ['DNI', 'Nombre','Apellido', 'Sexo', 'Fecha de nacimiento', 'Pais','Legajo','Sector','Usuario','Contrasña']
+    for i in range(10):
         if i == 4:
             print("Ahora a la fecha de nacimiento.")
             lista_filtro.append(validarFecha())    
@@ -68,6 +68,7 @@ def menu_agregar_empelado(lista_empleado):
     lista_filtro[5]=persona.check_pais(lista_filtro[5])
     lista_filtro[6]=empleado.checklegajo(lista_filtro[6], lista_empleado)
     lista_filtro[7]=empleado.checksector(lista_filtro[7])
+    lista_filtro[8]=empleado.check_usuario_repetido(lista_filtro[8],lista_empleado)
     return lista_filtro
 
 def menu_agregar_vuelo(lista_empleado,arbol_vuelo):

@@ -33,8 +33,8 @@ def validarFecha():
         else:
             dia = validarNum("dia", 1, 28)
     return(datetime.date(año, mes, dia))
-
-#login recibe un usuario y una contraseña para chequear si está en el sistema. 
+"""
+#login recibe un usuario y una contraseña para chequear si está en el sistema.  NO SE USA MAS
 def login(username, password):
         with open("Usuarios.txt", 'r', encoding='utf-8') as archivo:
             listaUsuarios=[]
@@ -50,7 +50,7 @@ def login(username, password):
                 password = input("Error, contraseña incorrecta. Ingresela nuevamente: ")
             return True
 
-#registrarse escribe el archivo que tiene los usuarios y contraseñas para registrar un nuevo usuario
+#registrarse escribe el archivo que tiene los usuarios y contraseñas para registrar un nuevo usuario.  NO SE USA MAS
 def registrarse(username):
     with open("Usuarios.txt", 'r', encoding='utf-8') as archivo:
         listaUsuarios=[]
@@ -64,6 +64,7 @@ def registrarse(username):
         archivo.write(f"\n{username}.{password}")
         return True
 
+#NO SE USA MAS
 def actualizar_contra(us, con):
     with open("Usuarios.txt", 'r', encoding='utf-8') as archivo:
         listaUsuarios=[]
@@ -78,7 +79,7 @@ def actualizar_contra(us, con):
         for i, j in zip(listaUsuarios, passwordList):
             archivo.write(f"{i}.{j}\n")
         return True
-
+"""
 #actualizar para las listas fijas
 def actualizar(lista, input_principal, atributo_principal, atributo_a_buscar, nuevo_input):
     for objeto in lista:

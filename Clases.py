@@ -109,19 +109,34 @@ class persona:
     
 #empleado
 class empleado(persona):
-    def __init__(self,DNI,nombre,apellido,sexo,fecha_de_nacimiento,pais,legajo,sector,mail=None,telefono=None):
+    def __init__(self,DNI,nombre,apellido,sexo,fecha_de_nacimiento,pais,legajo,sector,usuario,contraseña,mail=None,telefono=None):
         super().__init__(DNI,nombre,apellido,sexo,fecha_de_nacimiento,pais,None,None)
         self.legajo=legajo
         self.sector=sector
+        self.usuario=usuario
+        self.contraseña=contraseña
     
     #esPiloto pregunta si ese empleado es un piloto devolviendo un booleano
     def esPiloto(self):
         return self.sector == "Piloto"
 
-
     def __str__(self):
         return "Empleado DNI {}, se llama {}, {}, sexo {}, nació el {}, oriundo de {}, legajo {}, trabaja como {}".format(self.DNI,self.nombre,self.apellido,self.sexo,self.fecha_de_nacimiento,self.pais,self.legajo,self.sector)
-
+    
+    @staticmethod
+    def login(usuario,contraseña,lista_empleado):
+        for objeto in lista_empleado:
+            if objeto.usuario==usuario:
+                if objeto.contraseña==contraseña:
+                    return objeto
+                else:
+                    contraseña=input('Contraseña incorrecta, ingresela nuevamente:  ')
+                    empleado.login(usuario,contraseña,lista_empleado)
+                    return objeto
+        usuario=input('Su usuario no existe, ingrese nuevamente su usuario:  ')
+        empleado.login(usuario,contraseña,lista_empleado)
+        
+        
     @staticmethod
     def DNI_repetido_empleado(DNI,lista_empleado):
         for objeto in lista_empleado:
@@ -177,16 +192,12 @@ class empleado(persona):
                 legajo=input("El legajo no existe. Ingrese el legajo nuevamente:") 
                 legajo = empleado.check_legajo_existente(legajo, lista_empleado)
                 return legajo
-
-
-
             elif cont==1:
-                return legajo 
-                                                     
+                return legajo                         
         return legajo 
     
      
-                             
+                
     #chequear sector: que sea un sector preexistente
     @staticmethod
     def checksector(sector):
@@ -195,6 +206,15 @@ class empleado(persona):
             print('El sector debe ser preexistente')
             sector=input("Ingrese el sector nuevamente:")
         return sector
+    
+    @staticmethod
+    def check_usuario_repetido(usuario,lista_empleado):
+        for objeto in lista_empleado:
+            if objeto.usuario==usuario:
+                usuario=input('Ingreso un usuario de un empleado preexistente. Ingrese uno nuevo:  ')
+                empleado.DNI_repetido_empleado(usuario,lista_empleado)
+                return usuario
+        return usuario
 
 #avion
 class avion:

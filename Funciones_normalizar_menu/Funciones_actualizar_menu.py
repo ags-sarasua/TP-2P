@@ -87,7 +87,7 @@ def menu_actualizar_empelado(lista_empleado):
                 print("El DNI ingresado no corresponde al de un empleado existente. La información no ha sido actualizada con exito.")
         
         elif eleccion_actualizar=="7":
-            nuevo_input=empleado.checklegajo(nuevo_input)
+            nuevo_input=empleado.checklegajo(nuevo_input, lista_empleado)
             if actualizar(lista_empleado,input_principal,"DNI","legajo",nuevo_input)==False:
                 print("El DNI ingresado no corresponde al de un empleado existente. La información no ha sido actualizada con exito.") 
 

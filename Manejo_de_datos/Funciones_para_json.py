@@ -2,7 +2,6 @@
 import datetime
 from Codigo_estructuras.Listas_enlazadas import *
 import json
-from Objetos_y_arbol.ListaObjetos import *
 from Codigo_estructuras.Codigo_Cola import*
 
 def normal_a_jason(lista_clase, nombre_archivo, atributo_fecha=None):

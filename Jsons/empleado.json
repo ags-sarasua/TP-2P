@@ -1,15 +1,17 @@
 [
   {
     "DNI": "12775678",
-    "nombre": "Juan",
-    "apellido": "Perez",
-    "sexo": "Masculino",
-    "fecha_de_nacimiento": "03/05/1990",
+    "nombre": "Agostina",
+    "apellido": "Mejor",
+    "sexo": "Femenino",
+    "fecha_de_nacimiento": "03/05/1999",
     "pais": "Argentina",
     "mail": null,
     "telefono": null,
     "legajo": "1234",
-    "sector": "Administrativo"
+    "sector": "Administrativo",
+    "usuario": "Agos",
+    "contraseña": "123"
   },
   {
     "DNI": "87611321",
@@ -21,7 +23,9 @@
     "mail": null,
     "telefono": null,
     "legajo": "5678",
-    "sector": "Piloto"
+    "sector": "Piloto",
+    "usuario": "MariaG",
+    "contraseña": "123"
   },
   {
     "DNI": "23422789",
@@ -33,7 +37,9 @@
     "mail": null,
     "telefono": null,
     "legajo": "9012",
-    "sector": "Tecnico"
+    "sector": "Tecnico",
+    "usuario": "PedroR",
+    "contraseña": "Autos"
   },
   {
     "DNI": "98733432",
@@ -45,7 +51,9 @@
     "mail": null,
     "telefono": null,
     "legajo": "3456",
-    "sector": "Administrativo"
+    "sector": "Administrativo",
+    "usuario": "AnaG",
+    "contraseña": "Gon"
   },
   {
     "DNI": "34545890",
@@ -57,7 +65,9 @@
     "mail": null,
     "telefono": null,
     "legajo": "7890",
-    "sector": "Tecnico"
+    "sector": "Tecnico",
+    "usuario": "MigueF",
+    "contraseña": "CARP"
   },
   {
     "DNI": "01255567",
@@ -69,7 +79,9 @@
     "mail": null,
     "telefono": null,
     "legajo": "2345",
-    "sector": "Piloto"
+    "sector": "Piloto",
+    "usuario": "LuciaM",
+    "contraseña": "123"
   },
   {
     "DNI": "78966234",
@@ -81,7 +93,9 @@
     "mail": null,
     "telefono": null,
     "legajo": "3456",
-    "sector": "Administrativo"
+    "sector": "Administrativo",
+    "usuario": "GustavoS",
+    "contraseña": "1234"
   },
   {
     "DNI": "45677901",
@@ -93,7 +107,9 @@
     "mail": null,
     "telefono": null,
     "legajo": "1235",
-    "sector": "Piloto"
+    "sector": "Piloto",
+    "usuario": "JuliaF",
+    "contraseña": "123"
   },
   {
     "DNI": "89088345",
@@ -105,7 +121,9 @@
     "mail": null,
     "telefono": null,
     "legajo": "5679",
-    "sector": "Tecnico"
+    "sector": "Tecnico",
+    "usuario": "AndresR",
+    "contraseña": "1234"
   },
   {
     "DNI": "54399109",
@@ -117,6 +135,8 @@
     "mail": null,
     "telefono": null,
     "legajo": "9013",
-    "sector": "Administrativo"
+    "sector": "Administrativo",
+    "usuario": "LilianaD",
+    "contraseña": "123"
   }
 ]

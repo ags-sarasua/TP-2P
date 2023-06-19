@@ -1,1 +1,0 @@
-list(cola_mantenimiento)
