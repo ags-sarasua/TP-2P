@@ -235,17 +235,15 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,
 
 def menu():
     inicio = True
+    lista_empleado=json_a_normal(empleado,r'Jsons\\empleado.json','fecha_de_nacimiento')
+    lista_avion=json_a_normal(avion,r'Jsons\\avion.json',"fecha_alta") 
+    lista_persona=json_a_enlazada(persona,r'Jsons\\persona.json','fecha_de_nacimiento')
+    arbol_vuelo=arbol()
+    arbol_vuelo.cargar_estructura('Objetos_y_arbol\\arbol-vuelo.txt')
+    lista_viaje=json_a_enlazada(viaje,r'Jsons\\viaje.json','fecha','pasajeros',persona,'fecha_de_nacimiento')
+    lista_reserva=json_a_enlazada(reserva,r'Jsons\\reserva.json')
+    cola_mantenimiento=json_a_cola(avion,r'Jsons\\cola_mantenimiento.json')
     while inicio == True:
-        lista_empleado=json_a_normal(empleado,r'Jsons\\empleado.json','fecha_de_nacimiento')
-        lista_avion=json_a_normal(avion,r'Jsons\\avion.json',"fecha_alta") 
-        lista_persona=json_a_enlazada(persona,r'Jsons\\persona.json','fecha_de_nacimiento')
-        arbol_vuelo=arbol()
-        arbol_vuelo.cargar_estructura('Objetos_y_arbol\\arbol-vuelo.txt')
-        lista_viaje=json_a_enlazada(viaje,r'Jsons\\viaje.json','fecha','pasajeros',persona,'fecha_de_nacimiento')
-        lista_reserva=json_a_enlazada(reserva,r'Jsons\\reserva.json')
-        cola_mantenimiento=json_a_cola(avion,r'Jsons\\cola_mantenimiento.json')
-
-        
         print('')
         print(Fore.RED + "\033[1mBienvenido a aerolineas Mamba\033[0m")
         print("Base de datos por y para empleados")
@@ -265,7 +263,6 @@ def menu():
             lista_filtro=menu_agregar_empelado(lista_empleado)
             print(lista_filtro)
             lista_empleado.append(empleado(lista_filtro[0], lista_filtro[1], lista_filtro[2],lista_filtro[3],lista_filtro[4],lista_filtro[5],lista_filtro[6],lista_filtro[7],lista_filtro[8],lista_filtro[9]))
-            normal_a_jason(lista_empleado,r'Jsons\empleado.json','fecha_de_nacimiento')
         if numero == "2":
             print('Recuerde que debe ser un empleado de la compania. (Usuario:Agos Contra:123 FUNCIONA)')
             us = input("Ingrese su usuario: ")
