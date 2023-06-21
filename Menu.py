@@ -219,8 +219,8 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,
                 
 #salir
         if eleccion_clase=='S' or eleccion_clase =="s":
-            normal_a_jason(lista_empleado,r'Jsons\empleado.json')
-            normal_a_jason(lista_avion,r'Jsons\avion.json')
+            normal_a_jason(lista_empleado,r'Jsons\empleado.json','fecha_de_nacimiento')
+            normal_a_jason(lista_avion,r'Jsons\avion.json',"fecha_alta")
             list(cola_mantenimiento)
             normal_a_jason(cola_mantenimiento,r'Jsons\cola_mantenimiento.json')
             lista_persona.enlazada_a_jason(r'Jsons\persona.json',atributo_fecha='fecha_de_nacimiento')
@@ -236,8 +236,8 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,
 def menu():
     inicio = True
     while inicio == True:
-        lista_empleado=json_a_normal(empleado,r'Jsons\\empleado.json')
-        lista_avion=json_a_normal(avion,r'Jsons\\avion.json') 
+        lista_empleado=json_a_normal(empleado,r'Jsons\\empleado.json','fecha_de_nacimiento')
+        lista_avion=json_a_normal(avion,r'Jsons\\avion.json',"fecha_alta") 
         lista_persona=json_a_enlazada(persona,r'Jsons\\persona.json','fecha_de_nacimiento')
         arbol_vuelo=arbol()
         arbol_vuelo.cargar_estructura('Objetos_y_arbol\\arbol-vuelo.txt')
@@ -263,12 +263,15 @@ def menu():
         while numero != "1" and numero != "2": numero = input("Ingrese una opción válida:   ")
         if numero == "1":  
             lista_filtro=menu_agregar_empelado(lista_empleado)
-            lista_persona.append(empleado(lista_filtro[0], lista_filtro[1], lista_filtro[2],lista_filtro[3],lista_filtro[4],lista_filtro[5],lista_filtro[6],lista_filtro[7],lista_filtro[8],lista_filtro[9]))
- 
+            print(lista_filtro)
+            lista_empleado.append(empleado(lista_filtro[0], lista_filtro[1], lista_filtro[2],lista_filtro[3],lista_filtro[4],lista_filtro[5],lista_filtro[6],lista_filtro[7],lista_filtro[8],lista_filtro[9]))
+            normal_a_jason(lista_empleado,r'Jsons\empleado.json','fecha_de_nacimiento')
         if numero == "2":
             print('Recuerde que debe ser un empleado de la compania. (Usuario:Agos Contra:123 FUNCIONA)')
             us = input("Ingrese su usuario: ")
             con = input("Ingrese su contraseña: ")
+            for objeto in lista_empleado:
+                        print(objeto)
             usuario=empleado.login(us, con,lista_empleado)
             menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,lista_reserva,cola_mantenimiento,usuario)
             inicio = False
