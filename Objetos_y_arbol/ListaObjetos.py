@@ -3,7 +3,7 @@ import datetime
 from Codigo_estructuras.Listas_enlazadas import *
 
 
-#Este archivo tiene instancias de objetos por defecto
+#Este archivo tiene instancias de objetos por defecto, NO SE USAN MAS. LAS DEJAMOS COMO RECORDATORIO DE NUESTRO PROGRESO.
 
 lista_persona=Lista()
 
