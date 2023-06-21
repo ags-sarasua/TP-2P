@@ -243,6 +243,8 @@ def menu():
     lista_viaje=json_a_enlazada(viaje,r'Jsons\\viaje.json','fecha','pasajeros',persona,'fecha_de_nacimiento')
     lista_reserva=json_a_enlazada(reserva,r'Jsons\\reserva.json')
     cola_mantenimiento=json_a_cola(avion,r'Jsons\\cola_mantenimiento.json')
+    
+    
     while inicio == True:
         print('')
         print(Fore.RED + "\033[1mBienvenido a aerolineas Mamba\033[0m")
@@ -267,15 +269,13 @@ def menu():
             print('Recuerde que debe ser un empleado de la compania. (Usuario:Agos Contra:123 FUNCIONA)')
             us = input("Ingrese su usuario: ")
             con = input("Ingrese su contraseña: ")
-            for objeto in lista_empleado:
-                        print(objeto)
             usuario=empleado.login(us, con,lista_empleado)
             menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,lista_reserva,cola_mantenimiento,usuario)
+            print('')
+            print(Fore.RED + "\033[1mGracias por su visita\033[0m")
+            print(Fore.RED + "\033[1mTerminó la ejecución del programa\033[0m")
+            print('')
+            print('')
             inicio = False
             
 menu()
-print('')
-print(Fore.RED + "\033[1mGracias por su visita\033[0m")
-print(Fore.RED + "\033[1mTerminó la ejecución del programa\033[0m")
-print('')
-print('')
