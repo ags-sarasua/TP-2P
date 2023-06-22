@@ -171,7 +171,7 @@ def menu_actualizar_viaje(lista_viaje):
     
     else: print("Ingrese alguna de las opciones númericas y vuelva a intentarlo")
 
-def menu_actualizar_reserva(lista_empleado,lista_viaje,lista_reserva):
+def menu_actualizar_reserva(lista_persona,lista_empleado,lista_viaje,lista_reserva):
     print('1)Nro reserva   2)DNI cliente   3)Legajo Empleado  4)Nro viaje')
     print('\n \t Comentario')
     print('Nro reserva: 4 digitos numericos  \nDNI: 8 digitos numericos   \nLegajo: 4 digitos numericos   \nNro viaje: 4 numeros \n')
@@ -184,20 +184,26 @@ def menu_actualizar_reserva(lista_empleado,lista_viaje,lista_reserva):
         if eleccion_actualizar=="1":
             nuevo_input=reserva.check_sintaxis_nro_reserva(nuevo_input)
             if lista_reserva.actualizar_le(input_principal,"nro_reserva","nro_reserva",nuevo_input) == False:
-                print("El número de reserva ingresado no corresponde al de un reserva existente. La información no ha sido actualizada con exito.")
+                print("El número de reserva ingresado no corresponde al de una reserva existente. La información no ha sido actualizada con exito.")
         if eleccion_actualizar=="2":
             nuevo_input=persona.check_DNI(nuevo_input)
+            nuevo_input=reserva.check_cliente(nuevo_input,lista_persona)
             if lista_reserva.actualizar_le(input_principal,"nro_reserva","DNI_cliente",nuevo_input) == False:
-                print("El número de reserva ingresado no corresponde al de un reserva existente. La información no ha sido actualizada con exito.")
+                print("El número de reserva ingresado no corresponde al de una reserva existente. La información no ha sido actualizada con exito.")
         if eleccion_actualizar=="3":
-            nuevo_input=empleado.check_legajo_existente(nuevo_input, lista_empleado)
+            nuevo_input=reserva.check_empleado(nuevo_input,lista_empleado)
             if lista_reserva.actualizar_le(input_principal,"nro_reserva","empleado",nuevo_input) == False:
-                print("El número de reserva ingresado no corresponde al de un reserva existente. La información no ha sido actualizada con exito.")
+                print("El número de reserva ingresado no corresponde al de una reserva existente. La información no ha sido actualizada con exito.")
         if eleccion_actualizar=="4":
+            nuevo_input=reserva.check_viaje(nuevo_input,lista_viaje)
+            if lista_reserva.buscar_attr(input_principal, "nro_reserva","nro_viaje"):
+                nro_viaje_viejo=lista_reserva.buscar_attr(input_principal, "nro_reserva","nro_viaje")
+                pasajero_DNI=lista_reserva.buscar_attr(input_principal, "nro_reserva","DNI_cliente")
+                pasajero=lista_persona.buscar_inst(pasajero_DNI,"DNI")
+                if viaje.agregar_pasajero(nuevo_input, pasajero, lista_viaje):
+                    lista_reserva.actualizar_le(input_principal,"nro_reserva","nro_viaje",nuevo_input)
+                    viaje.eliminar_pasajero(nro_viaje_viejo, pasajero, lista_viaje)
+            else: print("El número de reserva ingresado no corresponde al de una reserva existente. La información no ha sido actualizada con exito.")
             
-            nuevo_input=viaje.check_sintaxis_nro_viaje(nuevo_input,lista_viaje)
-            if lista_reserva.actualizar_le(input_principal,"nro_reserva","nro_viaje",nuevo_input) == False:
-                print("El número de reserva ingresado no corresponde al de un reserva existente. La información no ha sido actualizada con exito.")
-        
     else:
         print("Ingrese alguna de las opciones numéricas y vuelva a intentarlo")

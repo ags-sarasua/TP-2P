@@ -14,46 +14,6 @@
         "pais": "España",
         "mail": "ana@gmail.com",
         "telefono": "1111111111"
-      },
-      {
-        "DNI": "23456789",
-        "nombre": "Juan Bautista",
-        "apellido": "Alberdi",
-        "sexo": "Masculino",
-        "fecha_de_nacimiento": "1995-06-27",
-        "pais": "Argentina",
-        "mail": "juan@gmail.com",
-        "telefono": "1234567890"
-      },
-      {
-        "DNI": "34567890",
-        "nombre": "Luisa",
-        "apellido": "Risso",
-        "sexo": "Femenino",
-        "fecha_de_nacimiento": "1982-08-02",
-        "pais": "México",
-        "mail": "luisa@gmail.com",
-        "telefono": "2345678901"
-      },
-      {
-        "DNI": "45678901",
-        "nombre": "Pedro",
-        "apellido": "Abascal",
-        "sexo": "Masculino",
-        "fecha_de_nacimiento": "1998-10-11",
-        "pais": "Francia",
-        "mail": "pedro@gmail.com",
-        "telefono": "3456789012"
-      },
-      {
-        "DNI": "56789012",
-        "nombre": "Lucía",
-        "apellido": "Nagatomo",
-        "sexo": "Femenino",
-        "fecha_de_nacimiento": "1975-12-04",
-        "pais": "Japón",
-        "mail": "lucia@gmail.com",
-        "telefono": "4567890123"
       }
     ],
     "contador_pasajeros": 1
@@ -65,16 +25,6 @@
     "fecha": "2022-05-23",
     "pasajeros": [
       {
-        "DNI": "12345678",
-        "nombre": "Ana",
-        "apellido": "Fangio",
-        "sexo": "Femenino",
-        "fecha_de_nacimiento": "1988-04-15",
-        "pais": "España",
-        "mail": "ana@gmail.com",
-        "telefono": "1111111111"
-      },
-      {
         "DNI": "23456789",
         "nombre": "Juan Bautista",
         "apellido": "Alberdi",
@@ -83,36 +33,6 @@
         "pais": "Argentina",
         "mail": "juan@gmail.com",
         "telefono": "1234567890"
-      },
-      {
-        "DNI": "34567890",
-        "nombre": "Luisa",
-        "apellido": "Risso",
-        "sexo": "Femenino",
-        "fecha_de_nacimiento": "1982-08-02",
-        "pais": "México",
-        "mail": "luisa@gmail.com",
-        "telefono": "2345678901"
-      },
-      {
-        "DNI": "45678901",
-        "nombre": "Pedro",
-        "apellido": "Abascal",
-        "sexo": "Masculino",
-        "fecha_de_nacimiento": "1998-10-11",
-        "pais": "Francia",
-        "mail": "pedro@gmail.com",
-        "telefono": "3456789012"
-      },
-      {
-        "DNI": "56789012",
-        "nombre": "Lucía",
-        "apellido": "Nagatomo",
-        "sexo": "Femenino",
-        "fecha_de_nacimiento": "1975-12-04",
-        "pais": "Japón",
-        "mail": "lucia@gmail.com",
-        "telefono": "4567890123"
       }
     ],
     "contador_pasajeros": 1
@@ -174,7 +94,7 @@
         "telefono": "4567890123"
       }
     ],
-    "contador_pasajeros": 1
+    "contador_pasajeros": 5
   },
   {
     "nro_viaje": "4390",
@@ -233,7 +153,7 @@
         "telefono": "4567890123"
       }
     ],
-    "contador_pasajeros": 1
+    "contador_pasajeros": 5
   },
   {
     "nro_viaje": "4545",
@@ -292,7 +212,7 @@
         "telefono": "4567890123"
       }
     ],
-    "contador_pasajeros": 1
+    "contador_pasajeros": 5
   },
   {
     "nro_viaje": "2368",
@@ -341,17 +261,17 @@
         "telefono": "3456789012"
       },
       {
-        "DNI": "56789012",
+        "DNI": "67899123",
         "nombre": "Lucía",
-        "apellido": "Nagatomo",
+        "apellido": "Fernández",
         "sexo": "Femenino",
-        "fecha_de_nacimiento": "1975-12-04",
-        "pais": "Japón",
-        "mail": "lucia@gmail.com",
-        "telefono": "4567890123"
+        "fecha_de_nacimiento": "1993-03-25",
+        "pais": "Brasil",
+        "mail": "lucia2@gmail.com",
+        "telefono": "567801234"
       }
     ],
-    "contador_pasajeros": 0
+    "contador_pasajeros": 5
   },
   {
     "nro_viaje": "2356",
@@ -410,7 +330,7 @@
         "telefono": "4567890123"
       }
     ],
-    "contador_pasajeros": 0
+    "contador_pasajeros": 5
   },
   {
     "nro_viaje": "8765",
@@ -469,7 +389,7 @@
         "telefono": "4567890123"
       }
     ],
-    "contador_pasajeros": 0
+    "contador_pasajeros": 5
   },
   {
     "nro_viaje": "3568",
@@ -478,57 +398,17 @@
     "fecha": "2023-02-17",
     "pasajeros": [
       {
-        "DNI": "12345678",
-        "nombre": "Ana",
-        "apellido": "Fangio",
+        "DNI": "89012345",
+        "nombre": "Carla",
+        "apellido": "Yema",
         "sexo": "Femenino",
-        "fecha_de_nacimiento": "1988-04-15",
-        "pais": "España",
-        "mail": "ana@gmail.com",
-        "telefono": "1111111111"
-      },
-      {
-        "DNI": "23456789",
-        "nombre": "Juan Bautista",
-        "apellido": "Alberdi",
-        "sexo": "Masculino",
-        "fecha_de_nacimiento": "1995-06-27",
-        "pais": "Argentina",
-        "mail": "juan@gmail.com",
-        "telefono": "1234567890"
-      },
-      {
-        "DNI": "34567890",
-        "nombre": "Luisa",
-        "apellido": "Risso",
-        "sexo": "Femenino",
-        "fecha_de_nacimiento": "1982-08-02",
-        "pais": "México",
-        "mail": "luisa@gmail.com",
-        "telefono": "2345678901"
-      },
-      {
-        "DNI": "45678901",
-        "nombre": "Pedro",
-        "apellido": "Abascal",
-        "sexo": "Masculino",
-        "fecha_de_nacimiento": "1998-10-11",
-        "pais": "Francia",
-        "mail": "pedro@gmail.com",
-        "telefono": "3456789012"
-      },
-      {
-        "DNI": "56789012",
-        "nombre": "Lucía",
-        "apellido": "Nagatomo",
-        "sexo": "Femenino",
-        "fecha_de_nacimiento": "1975-12-04",
-        "pais": "Japón",
-        "mail": "lucia@gmail.com",
-        "telefono": "4567890123"
+        "fecha_de_nacimiento": "1978-09-18",
+        "pais": "Canadá",
+        "mail": "carla@gamil.com",
+        "telefono": "8901234567"
       }
     ],
-    "contador_pasajeros": 0
+    "contador_pasajeros": 1
   },
   {
     "nro_viaje": "0965",
@@ -537,56 +417,16 @@
     "fecha": "2023-05-19",
     "pasajeros": [
       {
-        "DNI": "12345678",
-        "nombre": "Ana",
-        "apellido": "Fangio",
-        "sexo": "Femenino",
-        "fecha_de_nacimiento": "1988-04-15",
-        "pais": "España",
-        "mail": "ana@gmail.com",
-        "telefono": "1111111111"
-      },
-      {
-        "DNI": "23456789",
-        "nombre": "Juan Bautista",
-        "apellido": "Alberdi",
+        "DNI": "90123456",
+        "nombre": "Pablo",
+        "apellido": "Leuco",
         "sexo": "Masculino",
-        "fecha_de_nacimiento": "1995-06-27",
-        "pais": "Argentina",
-        "mail": "juan@gmail.com",
-        "telefono": "1234567890"
-      },
-      {
-        "DNI": "34567890",
-        "nombre": "Luisa",
-        "apellido": "Risso",
-        "sexo": "Femenino",
-        "fecha_de_nacimiento": "1982-08-02",
-        "pais": "México",
-        "mail": "luisa@gmail.com",
-        "telefono": "2345678901"
-      },
-      {
-        "DNI": "45678901",
-        "nombre": "Pedro",
-        "apellido": "Abascal",
-        "sexo": "Masculino",
-        "fecha_de_nacimiento": "1998-10-11",
-        "pais": "Francia",
-        "mail": "pedro@gmail.com",
-        "telefono": "3456789012"
-      },
-      {
-        "DNI": "56789012",
-        "nombre": "Lucía",
-        "apellido": "Nagatomo",
-        "sexo": "Femenino",
-        "fecha_de_nacimiento": "1975-12-04",
-        "pais": "Japón",
-        "mail": "lucia@gmail.com",
-        "telefono": "4567890123"
+        "fecha_de_nacimiento": "1980-05-29",
+        "pais": "Australia",
+        "mail": "pablo@gmail.com",
+        "telefono": "9012345678"
       }
     ],
-    "contador_pasajeros": 0
+    "contador_pasajeros": 1
   }
 ]

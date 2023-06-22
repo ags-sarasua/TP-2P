@@ -51,7 +51,7 @@ def menu_agregar_empelado(lista_empleado):
     print('\n \t Comentario')
     print('DNI: 8 digitos numericos \nSexo: Masculino, Femenino, Otro \nPais: en mayuscula y en ingles  \nLegajo: 4 numeros \nSector: Piloto,Tecnico,Administrativo \n')
     lista_filtro=[]
-    listaMenu = ['DNI', 'Nombre','Apellido', 'Sexo', 'Fecha de nacimiento', 'Pais','Legajo','Sector','Usuario','Contrasña']
+    listaMenu = ['DNI', 'Nombre','Apellido', 'Sexo', 'Fecha de nacimiento', 'Pais','Legajo','Sector','Usuario','Contraseña']
     for i in range(10):
         if i == 4:
             print("Ahora a la fecha de nacimiento.")

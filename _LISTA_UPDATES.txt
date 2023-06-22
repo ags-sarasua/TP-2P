@@ -31,3 +31,6 @@ Updates:
 Observaciones:
 
 1) Recuerden que solo los empleados pueden acceder al sistema
+
+2) AL actualizar una reserva y cambiar los pasajeros en los viajes, al cerrar el programa y guardar los archivos de vuelta a Json, 
+        el codigo se rompe por "fecha.isoformat()". No lo pudimos resolver. 

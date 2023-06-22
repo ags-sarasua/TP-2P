@@ -14,43 +14,211 @@
     "monto": "1800"
   },
   {
-    "nro_reserva": "1003",
+    "nro_reserva": "1030",
+    "DNI_cliente": "12345678",
+    "empleado": "1234",
+    "nro_viaje": "3578",
+    "monto": "2200"
+  },
+  {
+    "nro_reserva": "1031",
+    "DNI_cliente": "23456789",
+    "empleado": "1234",
+    "nro_viaje": "3578",
+    "monto": "2200"
+  },
+  {
+    "nro_reserva": "1032",
     "DNI_cliente": "34567890",
     "empleado": "1234",
     "nro_viaje": "3578",
     "monto": "2200"
   },
   {
-    "nro_reserva": "1004",
+    "nro_reserva": "1033",
+    "DNI_cliente": "45678901",
+    "empleado": "1234",
+    "nro_viaje": "3578",
+    "monto": "2200"
+  },
+  {
+    "nro_reserva": "1034",
+    "DNI_cliente": "56789012",
+    "empleado": "1234",
+    "nro_viaje": "3578",
+    "monto": "2200"
+  },
+  {
+    "nro_reserva": "1040",
+    "DNI_cliente": "12345678",
+    "empleado": "3456",
+    "nro_viaje": "4390",
+    "monto": "1900"
+  },
+  {
+    "nro_reserva": "1041",
+    "DNI_cliente": "23456789",
+    "empleado": "3456",
+    "nro_viaje": "4390",
+    "monto": "1900"
+  },
+  {
+    "nro_reserva": "1042",
+    "DNI_cliente": "34567890",
+    "empleado": "3456",
+    "nro_viaje": "4390",
+    "monto": "1900"
+  },
+  {
+    "nro_reserva": "1043",
     "DNI_cliente": "45678901",
     "empleado": "3456",
     "nro_viaje": "4390",
     "monto": "1900"
   },
   {
-    "nro_reserva": "1005",
+    "nro_reserva": "1044",
+    "DNI_cliente": "56789012",
+    "empleado": "3456",
+    "nro_viaje": "4390",
+    "monto": "1900"
+  },
+  {
+    "nro_reserva": "1050",
+    "DNI_cliente": "12345678",
+    "empleado": "3456",
+    "nro_viaje": "4545",
+    "monto": "2000"
+  },
+  {
+    "nro_reserva": "1051",
+    "DNI_cliente": "23456789",
+    "empleado": "3456",
+    "nro_viaje": "4545",
+    "monto": "2000"
+  },
+  {
+    "nro_reserva": "1052",
+    "DNI_cliente": "34567890",
+    "empleado": "3456",
+    "nro_viaje": "4545",
+    "monto": "2000"
+  },
+  {
+    "nro_reserva": "1053",
+    "DNI_cliente": "45678901",
+    "empleado": "3456",
+    "nro_viaje": "4545",
+    "monto": "2000"
+  },
+  {
+    "nro_reserva": "1054",
     "DNI_cliente": "56789012",
     "empleado": "3456",
     "nro_viaje": "4545",
     "monto": "2000"
   },
   {
-    "nro_reserva": "1006",
+    "nro_reserva": "1060",
+    "DNI_cliente": "12345678",
+    "empleado": "1234",
+    "nro_viaje": "2368",
+    "monto": "2300"
+  },
+  {
+    "nro_reserva": "1061",
+    "DNI_cliente": "23456789",
+    "empleado": "1234",
+    "nro_viaje": "2368",
+    "monto": "2300"
+  },
+  {
+    "nro_reserva": "1062",
+    "DNI_cliente": "34567890",
+    "empleado": "1234",
+    "nro_viaje": "2368",
+    "monto": "2300"
+  },
+  {
+    "nro_reserva": "1063",
+    "DNI_cliente": "45678901",
+    "empleado": "1234",
+    "nro_viaje": "2368",
+    "monto": "2300"
+  },
+  {
+    "nro_reserva": "1064",
     "DNI_cliente": "67899123",
     "empleado": "1234",
     "nro_viaje": "2368",
     "monto": "2300"
   },
   {
-    "nro_reserva": "1007",
-    "DNI_cliente": "67890123",
+    "nro_reserva": "1070",
+    "DNI_cliente": "12345678",
     "empleado": "3456",
     "nro_viaje": "2356",
     "monto": "2500"
   },
   {
-    "nro_reserva": "1008",
-    "DNI_cliente": "78901234",
+    "nro_reserva": "1071",
+    "DNI_cliente": "23456789",
+    "empleado": "3456",
+    "nro_viaje": "2356",
+    "monto": "2500"
+  },
+  {
+    "nro_reserva": "1072",
+    "DNI_cliente": "34567890",
+    "empleado": "3456",
+    "nro_viaje": "2356",
+    "monto": "2500"
+  },
+  {
+    "nro_reserva": "1073",
+    "DNI_cliente": "45678901",
+    "empleado": "3456",
+    "nro_viaje": "2356",
+    "monto": "2500"
+  },
+  {
+    "nro_reserva": "1074",
+    "DNI_cliente": "56789012",
+    "empleado": "3456",
+    "nro_viaje": "2356",
+    "monto": "2500"
+  },
+  {
+    "nro_reserva": "1080",
+    "DNI_cliente": "12345678",
+    "empleado": "9013",
+    "nro_viaje": "8765",
+    "monto": "2700"
+  },
+  {
+    "nro_reserva": "1081",
+    "DNI_cliente": "23456789",
+    "empleado": "9013",
+    "nro_viaje": "8765",
+    "monto": "2700"
+  },
+  {
+    "nro_reserva": "1082",
+    "DNI_cliente": "34567890",
+    "empleado": "9013",
+    "nro_viaje": "8765",
+    "monto": "2700"
+  },
+  {
+    "nro_reserva": "1083",
+    "DNI_cliente": "45678901",
+    "empleado": "9013",
+    "nro_viaje": "8765",
+    "monto": "2700"
+  },
+  {
+    "nro_reserva": "1084",
+    "DNI_cliente": "56789012",
     "empleado": "9013",
     "nro_viaje": "8765",
     "monto": "2700"

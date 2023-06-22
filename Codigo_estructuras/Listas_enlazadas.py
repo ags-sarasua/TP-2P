@@ -63,8 +63,6 @@ class Lista():
             return getattr(dato,atributo_a_buscar)
         return False 
         
-
-
     def actualizar_le(self,input_principal, atributo_principal,atributo_a_buscar,nuevo_input):
         nodo=Nodo()
         nodo=self.head

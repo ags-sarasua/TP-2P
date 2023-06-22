@@ -324,7 +324,7 @@ class vuelo:
 #viaje   
 class viaje:
     capacidad=5
-    def __init__(self,nro_viaje,nro_vuelo,nro_serie,fecha,pasajeros=[],contador_pasajeros=5):
+    def __init__(self,nro_viaje,nro_vuelo,nro_serie,fecha,pasajeros=[],contador_pasajeros=0):
         self.nro_viaje=nro_viaje
         self.nro_vuelo=nro_vuelo
         self.nro_serie=nro_serie
@@ -345,6 +345,7 @@ class viaje:
     
     def __str__(self):
         return f"Nro de viaje: {self.nro_viaje}, Nro de vuelo: {self.nro_vuelo}, Nro de serie del avión: {self.nro_serie}, Fecha: {self.fecha}, Pasajeros: " + self.str_pasajero()
+    
     def agregar_pasajero(nro_viaje, pasajero, lista_viaje):
         nodo_actual = lista_viaje.head
         while nodo_actual is not None:
@@ -353,6 +354,7 @@ class viaje:
                     if pasajero not in nodo_actual.dato.pasajeros:
                         nodo_actual.dato.pasajeros.append(pasajero)
                         nodo_actual.dato.contador_pasajeros += 1
+                        print('Pasajero de DNI {}   agregado al viaje {}'.format(pasajero.DNI,nro_viaje))
                         return True
                     else:
                         print("El pasajero ya está en la lista.")
@@ -363,6 +365,7 @@ class viaje:
             nodo_actual = nodo_actual.prox
         print("El número de viaje no fue encontrado.")
         return False
+    
     def eliminar_pasajero(nro_viaje, pasajero, lista_viaje):  
         nodo_actual = lista_viaje.head
         while nodo_actual is not None:
@@ -370,6 +373,7 @@ class viaje:
                 if pasajero in nodo_actual.dato.pasajeros:
                         nodo_actual.dato.pasajeros.remove(pasajero)
                         nodo_actual.dato.contador_pasajeros-=1
+                        print('Pasajero de DNI {}   eliminado del viaje {}'.format(pasajero.DNI,nro_viaje))
                         return True
                 else:
                     print("El pasajero no está en el vuelo indicado")
@@ -480,10 +484,11 @@ class reserva:
     
     #Chequea que el monto ingresado en la reserva sea el correspondiente
     @staticmethod
-    def check_monto(precio,nro_viaje,lista_viaje,lista_vuelo):
+    def check_monto(precio,nro_viaje,lista_viaje,arbol_vuelo):
         nro_vuelo=lista_viaje.buscar_attr(nro_viaje,"nro_viaje","nro_vuelo")
         while True:
-            if lista_vuelo.buscar_attr(nro_vuelo,"nro_vuelo","precio")==precio:
+            nodo=arbol_vuelo.buscar(nro_vuelo)
+            if nodo.valor.precio==precio:
                 return precio
             else: 
                 precio=input('Monto incorrecto, ingrese nuevamente su monto:    ')

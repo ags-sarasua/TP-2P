@@ -66,7 +66,8 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,
         #Agregar
                 if eleccion_metodo=='2':
                     lista_filtro=menu_agregar_empelado(lista_empleado)
-                    lista_persona.append(empleado(lista_filtro[0], lista_filtro[1], lista_filtro[2],lista_filtro[3],lista_filtro[4],lista_filtro[5],lista_filtro[6],lista_filtro[7],lista_filtro[8],lista_filtro[9]))
+                    lista_empleado.append(empleado(lista_filtro[0], lista_filtro[1], lista_filtro[2],lista_filtro[3],lista_filtro[4],lista_filtro[5],lista_filtro[6],lista_filtro[7],lista_filtro[8],lista_filtro[9]))
+                    
         #Eliminar
                 if eleccion_metodo=='3':
                     input_principal=input('Ingrese el DNI del empleado que desea eliminar: ')
@@ -210,7 +211,10 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,
                             print('La reserva nro {} se ha eliminado correctamente'.format(input_principal))
         #Actualizar
                 if eleccion_metodo=='4':
-                    menu_actualizar_reserva(lista_empleado,lista_viaje,lista_reserva)
+                    print('')
+                    print('Solo casos excepcionales en donde la empresa no recibe mas dinero por el cambio')
+                    print('')
+                    menu_actualizar_reserva(lista_persona,lista_empleado,lista_viaje,lista_reserva)
         #Volver
                 if eleccion_metodo=='B' or eleccion_metodo =="b":
                     menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,lista_reserva,cola_mantenimiento,usuario)
@@ -250,7 +254,7 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,
 
 def menu(): 
     inicio = True
-    #Traemos las listas de objetos desde los jsons 
+    #Traemos las listas de objetos desde los jsons5 
     lista_empleado=json_a_normal(empleado,r'Jsons\\empleado.json','fecha_de_nacimiento')
     lista_avion=json_a_normal(avion,r'Jsons\\avion.json',"fecha_alta") 
     lista_persona=json_a_enlazada(persona,r'Jsons\\persona.json','fecha_de_nacimiento')
