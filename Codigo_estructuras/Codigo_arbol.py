@@ -94,7 +94,8 @@ class arbol():
                 destino = datos[2].split(":")[1].strip()
                 legajo_piloto = datos[3].split(":")[1].strip()
                 precio = datos[4].split(":")[1].strip()
-
+                
+                #Creamos una nueva instancia una vez tenemos separados todos los atributos
                 vuelo_a_insertar = vuelo(nro_vuelo, origen, destino, legajo_piloto, precio)
 
                 self.insertar(vuelo_a_insertar)
@@ -116,7 +117,7 @@ class arbol():
         self.guardar_estructura_recursivo(nodo.izquierda, archivo)
         self.guardar_estructura_recursivo(nodo.derecha, archivo)
 
-
+    #Eliminar toma un valor como parámetro y verifica si existe un nodo con ese valor en el árbol. Si no se encuentra el valor, devuelve False.
     def eliminar(self, valor):
         if self.buscar(valor) is None:
             return False
@@ -125,8 +126,9 @@ class arbol():
         
     def eliminar_recursivo(self, valor, nodo_actual):
         if nodo_actual is None:
-            return nodo_actual
+            return nodo_actual #Esto si no encuentra nada
         
+        #Vemos si vamos a buscar a la izquierda o a la derecha 
         if valor < nodo_actual.valor.nro_vuelo:
             nodo_actual.izquierda = self.eliminar_recursivo(valor, nodo_actual.izquierda)
         elif valor > nodo_actual.valor.nro_vuelo:
@@ -139,8 +141,14 @@ class arbol():
             else:
                 nodo_actual.valor = self.obtener_minimo_valor(nodo_actual.derecha)
                 nodo_actual.derecha = self.eliminar_recursivo(nodo_actual.valor.nro_vuelo, nodo_actual.derecha)
-        
-        return nodo_actual    
+        """
+        Si el valor es igual a nodo_actual.valor.nro_vuelo, se ha encontrado el nodo que se desea eliminar.
+            Si el nodo actual no tiene un hijo izquierdo, se asigna el hijo derecho como el nuevo nodo_actual y se devuelve.
+            Si el nodo actual no tiene un hijo derecho, se asigna el hijo izquierdo como el nuevo nodo_actual y se devuelve.
+            Si el nodo actual tiene 2 hijos, se busca el valor mínimo en el subárbol derecho (el sucesor inmediato del nodo actual). Lugo, se asigna ese valor al nodo actual y se llama a eliminar_recursivo para eliminar el valor mínimo del subárbol derecho.
+        """
+
+        return nodo_actual #Ya actualizado   
 
     def obtener_minimo_valor(self, nodo_actual):
             while nodo_actual.izquierda is not None:

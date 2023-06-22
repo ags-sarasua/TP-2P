@@ -6,13 +6,14 @@ Updates:
 1) Usuario: Implementamos usuario y contraseña dentro de la clase empleado, es decir, es una base privada donde unicamente 
         los empleados pueden acceder. Asimismo una vez dentro del programa pueden modificar su contraseña.
 
-2) Manejo de archivos: todos los objetos pasaron a respaldarse en su respectivo archivo, de formato JSON.
+2) Manejo de archivos: todos los objetos pasaron a respaldarse en su respectivo archivo, de formato JSON todos salvo el árbol vuelo.
+        Este se trabaja con un txt, por la dificultad encontrada para abrir cada rama y pasarla a JSON por separado.
 
 3) Base de datos: los datos de las ejecuciones se guardan en sus repectivos archivos json. Las funciones GENERICAS se encuentran en 
         Funciones_para_json.py y en listasenlazadas.py. Se utilizo recursividad, listas enlazadas, diccionarios y manejo de archivos.
         Nuestra mayor dificultad transformar objetos adentro de objetos, junto con la limitacion de datos que acepta json. 
 
-4) Nuevo orden de menú: cada opción elegida en el menú principal llama a una función destinada a esa sección. 
+4) Nuevo orden de menú: cada opción elegida en el menú principal llama a una función destinada a esa sección, todo guardado en una carpeta para normalizar. 
 
 5) Manejo de errores: al momento de abrir un archivo, si no puede realizarse la acción, se finaliza el programa.
 
