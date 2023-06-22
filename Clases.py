@@ -19,7 +19,7 @@ class persona:
         return self.DNI == other.DNI
 
     def __str__(self):
-        return f"DNI: {self.DNI}, Nombre: {self.nombre}, Apellido: {self.apellido}, Sexo: {self.sexo}, Fecha de nacimiento: {self.fecha_de_nacimiento}, pais: {self.pais}, Pais: {self.pais}, Teléfono: {self.telefono}"
+        return f"DNI: {self.DNI}, Nombre: {self.nombre}, Apellido: {self.apellido}, Sexo: {self.sexo}, Fecha de nacimiento: {self.fecha_de_nacimiento}, pais: {self.pais}, Teléfono: {self.telefono}"
     #chequear DNI: que sea un número de 8 digitos
     @staticmethod
     def check_DNI(DNI):
