@@ -123,7 +123,7 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,
             while Booleano:
                 print('1)Visualizar lista   2)Agregar vuelo  3) Eliminar vuelo   B)Volver')
                 eleccion_metodo=input('Ingrese su eleccion: ')
-        #Visaulizar
+        #Visualizar
                 if eleccion_metodo=='1':
                     arbol.preorden(arbol_vuelo)
         #Agregar

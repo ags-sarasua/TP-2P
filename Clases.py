@@ -275,6 +275,7 @@ class vuelo:
 
     def __str__(self):
         return f"Nro de vuelo: {self.nro_vuelo}, Aeropuerto origen: {self.aeropuerto_salida}, Aeropuerto destino: {self.aeropuerto_llegada}, Legajo Piloto: {self.legajo_piloto}, Precio: {self.precio}"
+  
     #Verifica que el vuelo sea un número de 4 dígitos
     @staticmethod
     def check_sintaxis_nro_vuelo(nro_vuelo):
@@ -282,17 +283,18 @@ class vuelo:
             nro_vuelo = input("Error, debe ingresar un número de 4 dígitos: ")
         return nro_vuelo
     
+    #Verifica que el nro de vuelo no esté, asi no se repiten los vuelos
     @staticmethod
-    def check_existencia_nro_vuelo(nro_vuelo,lista_vuelo):        
-        while lista_vuelo.buscar_attr(nro_vuelo,"nro_vuelo","nro_vuelo"):
+    def check_existencia_nro_vuelo(nro_vuelo, arbol_vuelo):        
+        while arbol_vuelo.buscar(nro_vuelo):
             nro_vuelo=input('Existe un vuelo con ese nro de vuelo , ingrese uno nuevo:   ')
             nro_vuelo=vuelo.check_sintaxis_nro_vuelo(nro_vuelo)
-            nro_vuelo=vuelo.check_existencia_nro_vuelo(nro_vuelo,lista_vuelo)
+            nro_vuelo=vuelo.check_existencia_nro_vuelo(nro_vuelo,arbol_vuelo)
             return nro_vuelo
         return nro_vuelo
     
     #Chequea si el precio ingresado es un número positivo
-    
+        #Chequea que el vuelo existe en la clase Vuelo
     
     @staticmethod
     def check_precio_vuelo(precio):
