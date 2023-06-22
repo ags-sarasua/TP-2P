@@ -1,8 +1,9 @@
 
 import matplotlib.pyplot as mlp
+from colorama import init, Fore, Back, Style
 
 def menu_graficar_empleado(lista_empleado):
-    print('1)Cupo de genero   2)Distribuicion de roles')
+    print(Fore.BLUE + '\033[1m1)Cupo de genero   2)Distribuicion de roles\033[0m')
     eleccion_grafico=input('Ingrese su eleccion: ')
     if eleccion_grafico=='1':
         hombre=0

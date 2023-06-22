@@ -16,15 +16,19 @@ from colorama import init, Fore, Back, Style
 def menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,lista_reserva,cola_mantenimiento,usuario):
     menu = True
     while menu == True:
-        print('1)Persona  2)Empleado  3)Avion  4)Vuelo   5)Viaje   6)Reserva  7)Cambiar Contraseña   S)Salir')
+        print('')
+        print(Fore.BLUE + '\033[1m1)Persona  2)Empleado  3)Avion  4)Vuelo   5)Viaje   6)Reserva  7)Cambiar Contraseña\033[0m' +  '  S)Salir\033[0m')
         eleccion_clase=input('Ingrese su eleccion: ')
+        print('')
         
 #persona
         if eleccion_clase=='1':
             Booleano=True
             while Booleano:  #Para que una vez hagas algun metodo puedas volver a este lugar
-                print('1)Visualizar lista   2)Agregar persona   3)Actualizar Persona  4) Eliminar persona  B)Volver')
+                print('')
+                print(Fore.BLUE + '\033[1m1)Visualizar lista   2)Agregar persona   3)Actualizar Persona  4) Eliminar persona\033[0m'+ '  B)Volver')
                 eleccion_metodo=input('Ingrese su eleccion: ')
+                print('')
         #Visualizar
                 if eleccion_metodo=='1':
                     print(lista_persona)
@@ -51,8 +55,10 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,
         if eleccion_clase=='2':
             Booleano=True
             while Booleano:
-                print('1)Visualizar lista   2)Agregar empleado   3)Eliminar empleado  4)Actualizar empleado  5)Graficar   B)Volver')
+                print('')
+                print(Fore.BLUE + '\033[1m1)Visualizar lista   2)Agregar empleado   3)Eliminar empleado  4)Actualizar empleado  5)Graficar\033[0m'+  '  B)Volver')
                 eleccion_metodo=input('Ingrese su eleccion: ')
+                print('')
         #Visualizar
                 if eleccion_metodo=='1':
                     for objeto in lista_empleado:
@@ -87,8 +93,10 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,
         if eleccion_clase=='3':
             Booleano=True
             while Booleano:
-                print('1)Visualizar lista   2)Agregar avion   3)Eliminar avion   4)Actualizar Avión  5) Mantenimiento de avión  B)Volver')
+                print('')
+                print(Fore.BLUE + '\033[1m1)Visualizar lista   2)Agregar avion   3)Eliminar avion   4)Actualizar Avión  5) Mantenimiento de avión\033[0m'+  '  B)Volver')
                 eleccion_metodo=input('Ingrese su eleccion: ')
+                print('')
         #Visualizar
                 if eleccion_metodo=='1':
                     for objeto in lista_avion:
@@ -121,15 +129,17 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,
         if eleccion_clase=='4':
             Booleano=True
             while Booleano:
-                print('1)Visualizar lista   2)Agregar vuelo  3) Eliminar vuelo   B)Volver')
+                print('')
+                print(Fore.BLUE + '\033[1m1)Visualizar lista   2)Agregar vuelo  3) Eliminar vuelo   \033[0m'+  'B)Volver')
                 eleccion_metodo=input('Ingrese su eleccion: ')
+                print('')
         #Visualizar
                 if eleccion_metodo=='1':
                     arbol.preorden(arbol_vuelo)
         #Agregar
                 if eleccion_metodo=='2':
                     lista_filtro=menu_agregar_vuelo(lista_empleado,arbol_vuelo)
-                    arbol_vuelo.insertar(Nodo(vuelo(lista_filtro[0], lista_filtro[1], lista_filtro[2],lista_filtro[3],lista_filtro[4])))
+                    arbol_vuelo.insertar((vuelo(lista_filtro[0], lista_filtro[1], lista_filtro[2],lista_filtro[3],lista_filtro[4])))
         #Eliminar
                 if eleccion_metodo=='3':
                     vuelo_eliminar=input("Ingrese el número de vuelo que quiere eliminar: ")
@@ -147,8 +157,10 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,
         if eleccion_clase=='5':
             Booleano=True
             while Booleano:
-                print('1)Visualizar lista   2)Agregar viaje     3)Eliminar viaje  4)Actualizar Viaje    B)Volver')
+                print('')
+                print(Fore.BLUE + '\033[1m1)Visualizar lista   2)Agregar viaje     3)Eliminar viaje  4)Actualizar Viaje   \033[0m'+  'B)Volver')
                 eleccion_metodo=input('Ingrese su eleccion: ')
+                print('')
         #Visualizar
                 if eleccion_metodo=='1':
                     print(lista_viaje)
@@ -174,8 +186,10 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,
         if eleccion_clase=='6':
             Booleano=True
             while Booleano:
-                print('1)Visualizar lista   2)Agregar reserva   3)Eliminar reserva    4)Actualizar Reserva   B)Volver')
+                print('')
+                print(Fore.BLUE + '\033[1m1)Visualizar lista   2)Agregar reserva   3)Eliminar reserva    4)Actualizar Reserva  \033[0m'+  'B)Volver')
                 eleccion_metodo=input('Ingrese su eleccion: ')
+                print('')
         #Visualizar
                 if eleccion_metodo=='1':
                     print(lista_reserva)
@@ -269,6 +283,7 @@ def menu():
             lista_empleado.append(empleado(lista_filtro[0], lista_filtro[1], lista_filtro[2],lista_filtro[3],lista_filtro[4],lista_filtro[5],lista_filtro[6],lista_filtro[7],lista_filtro[8],lista_filtro[9]))
         if numero == "2":
             print('Recuerde que debe ser un empleado de la compania. (Usuario:Agos Contra:123 FUNCIONA)')
+            print('')
             us = input("Ingrese su usuario: ")
             con = input("Ingrese su contraseña: ")
             usuario=empleado.login(us, con,lista_empleado)
