@@ -4,7 +4,7 @@ class Cola:
         self.lista=[]
         
     def __str__(self):
-        return ', '.join(str(avion) for avion in self.lista)
+        return '\n'.join(str(avion) for avion in self.lista)
     
     def __iter__(self):
         return iter(self.lista)
@@ -20,7 +20,7 @@ class Cola:
     def desencolar(self):
         try:
             self.lista.pop(0)
-            print("El avion fue removido correctamente")
+            print("El avion que estaba hace mas tiempo fue removido correctamente")
             return self.lista.pop(0)
         except:
             raise ValueError("No hay aviones en mantenimiento")
@@ -43,8 +43,11 @@ def menu_cola_avion(lista_avion,cola_mantenimiento):
         if Booleano!=True:
             print("No se encuentra el avión en la base de datos")
     if seleccion =="2":
+        print('')
         print(cola_mantenimiento)
+        print('')
         cola_mantenimiento.desencolar()
+        print('')
         print(cola_mantenimiento)
     return None
             
