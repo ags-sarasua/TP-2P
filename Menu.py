@@ -248,9 +248,9 @@ def menu_clase(lista_persona,lista_empleado,lista_avion,arbol_vuelo,lista_viaje,
 
 #Menu de ingreso
 
-def menu():
+def menu(): 
     inicio = True
-    #Traemos las listas de objetos desde los archivos 
+    #Traemos las listas de objetos desde los jsons 
     lista_empleado=json_a_normal(empleado,r'Jsons\\empleado.json','fecha_de_nacimiento')
     lista_avion=json_a_normal(avion,r'Jsons\\avion.json',"fecha_alta") 
     lista_persona=json_a_enlazada(persona,r'Jsons\\persona.json','fecha_de_nacimiento')
