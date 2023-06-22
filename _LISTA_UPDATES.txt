@@ -27,6 +27,8 @@ Updates:
 9) Método eliminar: utiliza el método auxiliar eliminar_recursivo para buscar el nodo con el valor especificado en el árbol y eliminarlo.
         Si el nodo a eliminar tiene hijos, se realiza un reemplazo con el valor mínimo del subárbol derecho. El método obtener_minimo_valor se utiliza para encontrar el valor mínimo en el subárbol derecho.
 
+10) Al actualizar una reserva, cambiandole su viaje, los pasajeros e los respectivos viajes cambian acorde (no solo en numero, sino la lista pasajeros). 
+
 
 Observaciones:
 
